@@ -34,23 +34,6 @@
                 </div>
             </div>
         </div>
-        <div class="body" style="padding-bottom: 30px;">
-        	<div class="col-lg-3 col-md-6">
-                <h3 style="text-align: right;"> <strong> جستجو در دسته بندی</strong> </h3>
-                <form method="POST" action="{{route('search_by_category_blog')}}">
-                	@csrf
-                	<select class="form-control show-tick ms select2" name="category">
-                	    <option></option>
-                	    <optgroup label="سردسته">
-                	    @foreach($blogcategorys as $blogcategory)
-                	    <option>{{$blogcategory->BC_NAME}}</option>
-                	    @endforeach
-                	    </optgroup>
-                	</select>
-                	<button type="submit" class="btn btn-info waves-effect m-t-20">جستجو</button>
-            	</form>
-            </div>
-        </div>
         <div class="container-fluid">
             <div class="row clearfix">
                 <div class="col-lg-12">
@@ -59,9 +42,7 @@
                             <table class="table table-hover product_item_list c_table theme-color mb-0">
                                 <thead>
                                     <tr>
-                                        <th>تیتر پست</th>
-                                        <th data-breakpoints="sm xs">دسته بندی پست</th>
-                                        <th data-breakpoints="xs">نام کاربر</th>
+                                        <th>نام دسته بندی</th>
                                         <th data-breakpoints="xs md">وضعیت نمایش</th>
                                         <th data-breakpoints="sm xs md">اقدام</th>
                                     </tr>

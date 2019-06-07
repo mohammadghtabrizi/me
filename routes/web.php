@@ -39,6 +39,14 @@ Route::group(['prefix' => 'admin'],function(){
 			Route::get('/','admin\blog\AdminBlogMainController@index')->name('admin_blog_index');
 
 			Route::post('/','admin\blog\AdminBlogMainController@searchbycategoryblog')->name('search_by_category_blog');
+
+			Route::get('/block_post/{id}','admin\blog\AdminBlogMainController@blockpost')->name('block_post');
+
+			Route::get('/approve_post/{id}','admin\blog\AdminBlogMainController@approvepost')->name('approve_post');
+
+			Route::get('/delete_post/{id}','admin\blog\AdminBlogMainController@deletepost')->name('delete_post');
+
+			Route::get('/categorys_blog_index','admin\blog\AdminBlogMainController@indexcategorys')->name('admin_categorys_blog_index');
 		});
 
 		/*Blog Section*/

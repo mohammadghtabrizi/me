@@ -88,4 +88,57 @@ class AdminBlogMainController extends Controller
     		'blogcategorys' => $blogcategorys
     	]);
     }
+
+    public function blockpost(Request $request,$id){
+
+
+        $blogpostsearch = BlogPost::find($id);
+
+        $blogpostsearch->BP_DISPLAYSTATUS = 2;
+
+        $blogpostsearch->save();
+        
+        return redirect()->back();
+
+
+    }
+
+    public function approvepost(Request $request,$id){
+
+        $blogpostsearch = BlogPost::find($id);
+
+        $blogpostsearch->BP_DISPLAYSTATUS = 1;
+
+        $blogpostsearch->save();
+        
+        return redirect()->back();
+    }
+
+    public function deletepost(Request $request,$id){
+
+        $blogpostsearch = BlogPost::find($id);
+
+        $blogpostsearch->BP_DISPLAYSTATUS = 3;
+
+        $blogpostsearch->save();
+        
+        return redirect()->back();
+    }
+
+
+    public function indexcategorys(){
+
+        $categorys = BlogCategory::select('blog_category.*')
+            ->orderBy('blog_post.CREATED_AT','desc')
+            ->paginate(25);
+
+        return view('admin/blog/categorys-show')->with([
+
+            'statuses' => $this->statuses,
+
+            'categorys' => $categorys
+
+
+        ]);
+    }
 }

@@ -18,7 +18,7 @@
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>وبلاگ</span></a>
                 <ul class="ml-menu">
                     <li><a href="{{route('admin_blog_index')}}">پست وبلاگ</a></li>
-                    <li><a href="blog-list.html">دسته بندی ها</a></li>
+                    <li><a href="{{route('admin_categorys_blog_index')}}">دسته بندی ها</a></li>
                 </ul>
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-folder"></i><span>مدیریت فایل</span></a>
