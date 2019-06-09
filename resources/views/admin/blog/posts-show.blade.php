@@ -31,6 +31,10 @@
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">                
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                    <form method="get" action="{{route('add_post')}}">
+                        @csrf
+                        <button class="btn btn-success btn-icon float-right" type="submit" ><i class="zmdi zmdi-plus"></i></button>
+                    </form>
                 </div>
             </div>
         </div>

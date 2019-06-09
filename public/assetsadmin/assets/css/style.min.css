@@ -16103,7 +16103,8 @@ section.content {
 	background: #fff;
 	font-size: 14px;
 	color: #222;
-	padding: 20px
+	padding: 20px;
+	text-align: right;
 }
 
 @media only screen and (max-width: 767px) {

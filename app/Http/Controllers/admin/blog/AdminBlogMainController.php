@@ -129,7 +129,7 @@ class AdminBlogMainController extends Controller
     public function indexcategorys(){
 
         $categorys = BlogCategory::select('blog_category.*')
-            ->orderBy('blog_post.CREATED_AT','desc')
+            ->orderBy('blog_category.CREATED_AT','desc')
             ->paginate(25);
 
         return view('admin/blog/categorys-show')->with([
@@ -140,5 +140,60 @@ class AdminBlogMainController extends Controller
 
 
         ]);
+    }
+
+    public function deletecategory(Request $request,$id){
+
+        $blogcategorysearch = BlogCategory::find($id);
+
+        $blogcategorysearch->BC_DISPLAYSTATUS = 3;
+
+        $blogcategorysearch->save();
+        
+        return redirect()->back();
+    }
+
+    public function blockcategory(Request $request,$id){
+
+        $blogcategorysearch = BlogCategory::find($id);
+
+        $blogcategorysearch->BC_DISPLAYSTATUS = 2;
+
+        $blogcategorysearch->save();
+        
+        return redirect()->back();
+    }
+
+    public function approvecategory(Request $request,$id){
+
+        $blogcategorysearch = BlogCategory::find($id);
+
+        $blogcategorysearch->BC_DISPLAYSTATUS = 1;
+
+        $blogcategorysearch->save();
+        
+        return redirect()->back();
+    }
+
+    public function addcategory(){
+
+        return view('admin/blog/category-add');
+    }
+
+    public function addcategoryact(Request $request){
+
+
+        $newcategory = new BlogCategory();
+
+        $newcategory->BC_NAME = $request->get('postcategory');
+
+        $newcategory->save();
+
+        return redirect()->back();
+    }
+
+    public function addpost (){
+
+        
     }
 }

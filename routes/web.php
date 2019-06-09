@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin'],function(){
 
 
 
-		/*Blog Section*/
+		/*Admin Blog Section*/
 
 		Route::group(['prefix' => 'blog'],function(){
 
@@ -47,9 +47,21 @@ Route::group(['prefix' => 'admin'],function(){
 			Route::get('/delete_post/{id}','admin\blog\AdminBlogMainController@deletepost')->name('delete_post');
 
 			Route::get('/categorys_blog_index','admin\blog\AdminBlogMainController@indexcategorys')->name('admin_categorys_blog_index');
+
+			Route::get('/approve_category/{id}','admin\blog\AdminBlogMainController@approvecategory')->name('approve_category');
+
+			Route::get('/block_category/{id}','admin\blog\AdminBlogMainController@blockcategory')->name('block_category');
+
+			Route::get('/delete_category/{id}','admin\blog\AdminBlogMainController@deletecategory')->name('delete_category');
+
+			Route::get('/add_category','admin\blog\AdminBlogMainController@addcategory')->name('add_category_post');
+
+			Route::post('/add_category','admin\blog\AdminBlogMainController@addcategoryact')->name('add_category_post_act');
+
+			Route::get('/add_post','admin\blog\AdminBlogMainController@addpost')->name('add_post');
 		});
 
-		/*Blog Section*/
+		/*Admin Blog Section*/
 		
 		
 	});

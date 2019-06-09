@@ -31,6 +31,10 @@
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">                
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                    <form method="get" action="{{route('add_category_post')}}">
+                        @csrf
+                        <button class="btn btn-success btn-icon float-right" type="submit" ><i class="zmdi zmdi-plus"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -48,30 +52,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                	@foreach($blogposts as $blogpost)
-                                        @if($blogpost->BP_DISPLAYSTATUS >= 0 && $blogpost->BP_DISPLAYSTATUS <= 2)
+                                	@foreach($categorys as $category)
+                                        @if($category->BC_DISPLAYSTATUS >= 0 && $category->BC_DISPLAYSTATUS <= 2)
                                     	    <tr>
-                                    	        <td><h5>{{$blogpost->BP_TITLE}}</h5></td>
-                                    	        <td><span class="text-muted">{{$blogpost->BC_NAME}}</span></td>
-                                    	        <td>{{$blogpost->name}} {{$blogpost->lastname}}</td>
+                                    	        <td><h5>{{$category->BC_NAME}}</h5></td>
                                     	        <td>
-                                    	    	   <span class="{{ $statuses[$blogpost->BP_DISPLAYSTATUS]['color'] }}">{{ $statuses[$blogpost->BP_DISPLAYSTATUS]['title'] }}</span>
+                                    	    	   <span class="{{ $statuses[$category->BC_DISPLAYSTATUS]['color'] }}">{{ $statuses[$category->BC_DISPLAYSTATUS]['title'] }}</span>
                                     	        </td>
                                     	        <td>
-                                                    @if($blogpost->BP_DISPLAYSTATUS == 0)
-                                                        <a href="{{route('block_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد پست"><i class="zmdi zmdi-block"></i></a>
-                                                        <a href="{{route('approve_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش پست"><i class="zmdi zmdi-eye"></i></a>
-                                                        <a href="{{route('delete_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
+                                                    @if($category->BC_DISPLAYSTATUS == 0)
+                                                        <a href="{{route('block_category',['id' => $category->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد دسته بندی"><i class="zmdi zmdi-block"></i></a>
+                                                        <a href="{{route('approve_category',['id' => $category->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش دسته بندی"><i class="zmdi zmdi-eye"></i></a>
+                                                        <a href="{{route('delete_category',['id' => $category->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
                                                     @endif
-                                                    @if($blogpost->BP_DISPLAYSTATUS == 1)
-                                                        <a href="{{route('block_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد پست"><i class="zmdi zmdi-block"></i></a>
-                                                        <a href="{{route('delete_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
+                                                    @if($category->BC_DISPLAYSTATUS == 1)
+                                                        <a href="{{route('block_category',['id' => $category->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد دسته بندی"><i class="zmdi zmdi-block"></i></a>
+                                                        <a href="{{route('delete_category',['id' => $category->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
                                                     @endif
-                                                    @if($blogpost->BP_DISPLAYSTATUS == 2)
-                                                        <a href="{{route('approve_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش پست"><i class="zmdi zmdi-eye"></i></a>
-                                                        <a href="{{route('delete_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
+                                                    @if($category->BC_DISPLAYSTATUS == 2)
+                                                        <a href="{{route('approve_category',['id' => $category->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش دسته بندی"><i class="zmdi zmdi-eye"></i></a>
+                                                        <a href="{{route('delete_category',['id' => $category->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
                                                     @endif
-                                            	       <a href="{{route('show_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-green" title="ویرارش"><i class="zmdi zmdi-edit"></i></a>
+                                            	       <a href="{{route('approve_category',['id' => $category->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-green" title="ویرارش"><i class="zmdi zmdi-edit"></i></a>
                                         	   </td>
                                     	    </tr>
                                         @endif
@@ -80,7 +82,7 @@
                             </table>
                         </div>
                     </div>
-                    {{$blogposts->render('admin.partials.pagination-admin-panel')}}
+                    {{$categorys->render('admin.partials.pagination-admin-panel')}}
                 </div>
             </div>
         </div>
