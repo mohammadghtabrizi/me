@@ -194,6 +194,8 @@ class AdminBlogMainController extends Controller
 
     public function addpost (){
 
+        return view('admin/blog/post-add');
+
         
     }
 }
