@@ -34,7 +34,7 @@
     <link rel="stylesheet" media="screen" href="{{asset('css/vendor.min.css')}}">
 
 
-    <!--Newsletter-->
+    <link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/summernote/dist/summernote.css')}}"/>
     
     
     
@@ -67,6 +67,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+    <!-- For editor -->
+    <script src="{{asset('assetsadmin/assets/plugins/dropzone/dropzone.js')}}"></script> <!-- Dropzone Plugin Js --> 
+    <script src="{{asset('assetsadmin/assets/plugins/summernote/dist/summernote.js')}}"></script>
+    <!-- For editor -->
 
 
 

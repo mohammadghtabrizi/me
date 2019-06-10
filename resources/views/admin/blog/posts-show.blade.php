@@ -94,7 +94,7 @@
                                                         <a href="{{route('approve_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش پست"><i class="zmdi zmdi-eye"></i></a>
                                                         <a href="{{route('delete_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
                                                     @endif
-                                            	       <a href="{{route('show_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-green" title="ویرارش"><i class="zmdi zmdi-edit"></i></a>
+                                            	       <a href="{{route('edit_post',['id' => $blogpost->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-green" title="ویرارش"><i class="zmdi zmdi-edit"></i></a>
                                         	   </td>
                                     	    </tr>
                                         @endif

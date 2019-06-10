@@ -224,4 +224,26 @@ class AdminBlogMainController extends Controller
         return redirect()->back();
 
     }
+
+    public function editpost($id){
+
+        $post = BlogPost::join('blog_category','blog_post.BP_CATID','=','blog_category.id')
+            ->select('blog_category.BC_NAME')
+            ->select('blog_post.*')
+            ->where('blog_post.id','=',$id)
+            ->first();
+
+        dd($post);
+
+        $categorys = BlogCategory::select('blog_category.id','blog_category.BC_NAME')
+            ->where('blog_category.BC_SUBCATEGORYID','=',0)
+            ->get();
+
+        return view('admin\blog\post-edit')->with([
+
+            'post' => $post,
+
+            'categorys' => $categorys
+        ]);
+    }
 }

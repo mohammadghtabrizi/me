@@ -147,9 +147,9 @@
               </figure>
               @endforeach
             </div>
-            <h2 class="padding-top-2x">{{$item->BP_TITLE}}</h2>
+            <h2 class="padding-top-2x" style="text-align: center;">{{$item->BP_TITLE}}</h2>
             <p style="text-align:justify">{{$item->BP_DESS}}</p>
-            <p>{{$item->BP_DESL}}</p>
+            <p>{!!$item->BP_DESL!!}</p>
             <div class="card border-primary text-center mb-3">
               <div class="card-body"  style="background-color: #e8e9f7;">
                 <h4 class="card-title">نیاز به کمک بیشتری داری؟</h4>
