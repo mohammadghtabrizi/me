@@ -56,17 +56,38 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <form method="POST" action="{{route('add_category_post_act')}}">
+                        <form method="POST" action="{{route('add_post_act')}}">
                         	@csrf
                             <label for="post_category">سرتیتر وبلاگ</label>
                             <div class="form-group">                                
-                    	        <input type="text" id="post_category" class="form-control" name="postcategory" placeholder="سرتیتر وبلاگ را وارد نمایید ">
+                    	        <input type="text" id="post_category" class="form-control" name="posttitre" placeholder="سرتیتر وبلاگ را وارد نمایید ">
                             </div>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <textarea rows="4" class="form-control no-resize" placeholder="لطفا آنچه را که میخواهید تایپ کنید..."></textarea>
+                                    <textarea rows="4" class="form-control no-resize" name="postlessdesc" placeholder="لطفا آنچه را که میخواهید تایپ کنید..."></textarea>
                                 </div>
                             </div>
+                            <textarea class="summernote" name="postlongdesc"></textarea>
+                            <div class="card">
+                                <div class="header">
+                                    <h2><strong>انتخاب</strong>دسته بندی</h2>
+                                </div>
+                                <select class="form-control show-tick ms select2" name="category" data-placeholder="انتخاب">
+                                    <option></option>
+                                    @foreach($categorys as $category)
+                                        <option value="{{$category->id}}">{{$category->BC_NAME}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="card">
+                                <div class="header">
+                                    <h2><strong>اندازه فایل</strong> محدود</h2>
+                                </div>
+                                <div class="body">
+                                    <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
+                                    <input type="file" class="dropify" name="imagepost" data-max-file-size="1000K">
+                                </div>
+                            </div> 
                             <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">ثبت</button>
                         </form>
                     </div>

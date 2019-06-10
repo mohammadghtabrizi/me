@@ -194,8 +194,34 @@ class AdminBlogMainController extends Controller
 
     public function addpost (){
 
-        return view('admin/blog/post-add');
+        $categorys = BlogCategory::select('blog_category.id','blog_category.BC_NAME')
+            ->where('blog_category.BC_SUBCATEGORYID','=',0)
+            ->get();
+
+        return view('admin/blog/post-add')->with([
+
+            'categorys' => $categorys
+
+        ]);
 
         
+    }
+
+    public function addpostact(Request $request){
+
+        $newpost = new BlogPost();
+
+
+
+        $newpost->BP_TITLE = $request->get('posttitre');
+        $newpost->BP_DESS = $request->get('postlessdesc');
+        $newpost->BP_DESL = $request->get('postlongdesc');
+        $newpost->BP_CATID = $request->get('category');
+        $newpost->BP_USERID = 17;
+
+        $newpost->save();
+
+        return redirect()->back();
+
     }
 }

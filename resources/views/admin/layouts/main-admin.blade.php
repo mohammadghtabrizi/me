@@ -11,8 +11,13 @@
 <link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/bootstrap/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css')}}"/>
 <link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/charts-c3/plugin.css')}}"/>
-
+<link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/summernote/dist/summernote.css')}}"/>
 <link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/morrisjs/morris.min.css')}}" />
+
+<!-- For Upload Image -->
+<link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/dropify/css/dropify.min.css')}}">
+<!-- For Upload Image -->
+
 <!-- Custom Css -->
 <link rel="stylesheet" href="{{asset('assetsadmin/assets/css/style.min.css')}}">
 
@@ -46,17 +51,28 @@
 
 @yield('main-content-admin')
 
-
+<!-- Main -->
 <!-- Jquery Core Js --> 
 <script src="{{asset('assetsadmin/assets/bundles/libscripts.bundle.js')}}"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
+<script src="{{asset('assetsadmin/assets/bundles/mainscripts.bundle.js')}}"></script><!-- Custom Js -->
 <script src="{{asset('assetsadmin/assets/bundles/vendorscripts.bundle.js')}}"></script> <!-- slimscroll, waves Scripts Plugin Js -->
-
 <script src="{{asset('assetsadmin/assets/bundles/jvectormap.bundle.js')}}"></script> <!-- JVectorMap Plugin Js -->
 <script src="{{asset('assetsadmin/assets/bundles/sparkline.bundle.js')}}"></script> <!-- Sparkline Plugin Js -->
 <script src="{{asset('assetsadmin/assets/bundles/c3.bundle.js')}}"></script>
-
 <script src="{{asset('assetsadmin/assets/bundles/mainscripts.bundle.js')}}"></script>
 <script src="{{asset('assetsadmin/assets/js/pages/index.js')}}"></script>
+<!-- Main -->
+
+<!-- For Upload Image -->
+<script src="{{asset('assetsadmin/assets/plugins/dropify/js/dropify.min.js')}}"></script>
+<script src="{{asset('assetsadmin/assets/js/pages/forms/dropify.js')}}"></script>
+<!-- For Upload Image -->
+
+<!-- For editor -->
+<script src="{{asset('assetsadmin/assets/plugins/dropzone/dropzone.js')}}"></script> <!-- Dropzone Plugin Js --> 
+<script src="{{asset('assetsadmin/assets/plugins/summernote/dist/summernote.js')}}"></script>
+<!-- For editor -->
+
 
 @yield('scripts')
 

@@ -59,6 +59,8 @@ Route::group(['prefix' => 'admin'],function(){
 			Route::post('/add_category','admin\blog\AdminBlogMainController@addcategoryact')->name('add_category_post_act');
 
 			Route::get('/add_post','admin\blog\AdminBlogMainController@addpost')->name('add_post');
+
+			Route::post('/add_post','admin\blog\AdminBlogMainController@addpostact')->name('add_post_act');
 		});
 
 		/*Admin Blog Section*/
