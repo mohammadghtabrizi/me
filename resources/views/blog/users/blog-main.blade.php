@@ -55,7 +55,7 @@
 
                   ?>
 
-                  <img src="{{asset('img/blog')}}/{{ $file }}" alt="Post">
+                  <img src="{{asset('images/post-images')}}/{{ $file }}" alt="Post">
 
                 </a>
 

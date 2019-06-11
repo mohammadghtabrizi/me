@@ -142,7 +142,7 @@
             </div>
             <div class="owl-carousel text-center" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: true, &quot;loop&quot;: true }">
               @foreach($blogfiles as $file)
-              <figure><img src="{{ asset('img/blog')}}/{{$file->bf_source}}" alt="Image">
+              <figure><img src="{{ asset('images/post-images')}}/{{$file->bf_source}}" alt="Image">
                 <figcaption class="text-white">{{$item->BP_TITLE}}</figcaption>
               </figure>
               @endforeach
@@ -292,7 +292,7 @@
 
                   ?>
                 <div class="entry">
-                  <div class="entry-thumb"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}"><img src="{{asset('img/blog')}}/{{$file}}" alt="Post"></a></div>
+                  <div class="entry-thumb"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}"><img src="{{asset('images/post-images')}}/{{$file}}" alt="Post"></a></div>
                   <div class="entry-content">
                     <h4 class="entry-title"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}">{{$item->BP_TITLE}}</a></h4><span class="entry-meta">توسط {{$item->name}}</span>
                   </div>

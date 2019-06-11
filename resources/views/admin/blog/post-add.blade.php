@@ -56,11 +56,20 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <form method="POST" action="{{route('add_post_act')}}">
+                        <form enctype="multipart/form-data" method="POST" action="{{route('add_post_act')}}">
                         	@csrf
                             <label for="post_category">سرتیتر وبلاگ</label>
                             <div class="form-group">                                
-                    	        <input type="text" id="post_category" class="form-control" name="posttitre" placeholder="سرتیتر وبلاگ را وارد نمایید ">
+                                <input type="text" id="post_category" class="form-control" name="metatagdescription" placeholder="متا تگ توضیحات">
+                            </div>
+                            <div class="form-group">                                
+                                <input type="text" id="post_category" class="form-control" name="titlepage" placeholder="سرتیتر صفحه">
+                            </div>
+                            <div class="form-group">                                
+                    	        <input type="text" id="post_category" class="form-control" name="h1" placeholder="متن تگ مخفی">
+                            </div>
+                            <div class="form-group">                                
+                                <input type="text" id="post_category" class="form-control" name="posttitre" placeholder="تیتر پست">
                             </div>
                             <div class="form-group">
                                 <div class="form-line">
@@ -85,7 +94,7 @@
                                 </div>
                                 <div class="body">
                                     <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="imagepost" data-max-file-size="1000K">
+                                    <input type="file" class="dropify" name="image" data-max-file-size="1000K">
                                 </div>
                             </div> 
                             <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">ثبت</button>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\BlogPost;
 use App\BlogCategory;
 use App\Users;
+use App\BlogFile;
 
 class AdminBlogMainController extends Controller
 {
@@ -209,17 +210,39 @@ class AdminBlogMainController extends Controller
 
     public function addpostact(Request $request){
 
+
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/post-images');
+            $image->move($destinationPath, $name);  
+        }
+
+        $newfile = new BlogFile();
+
         $newpost = new BlogPost();
-
-
 
         $newpost->BP_TITLE = $request->get('posttitre');
         $newpost->BP_DESS = $request->get('postlessdesc');
         $newpost->BP_DESL = $request->get('postlongdesc');
         $newpost->BP_CATID = $request->get('category');
         $newpost->BP_USERID = 17;
+        $newpost->BP_METATAG_DESCRIPTION = $request->get('metatagdescription');
+        $newpost->BP_TITLE_PAGE = $request->get('titlepage');
+        $newpost->BP_TAG_H1 = $request->get('h1');
 
         $newpost->save();
+
+        $newfile->bf_idpost = $newpost->id; 
+        $newfile->bf_source = $name;
+        $newfile->bf_default = 1;
+
+        $newfile->save();
+
 
         return redirect()->back();
 
@@ -228,12 +251,10 @@ class AdminBlogMainController extends Controller
     public function editpost($id){
 
         $post = BlogPost::join('blog_category','blog_post.BP_CATID','=','blog_category.id')
-            ->select('blog_category.BC_NAME')
-            ->select('blog_post.*')
+            ->join('blog_files','blog_post.id','=','blog_files.bf_idpost')
+            ->select('blog_post.*','blog_files.bf_source','blog_category.BC_NAME','blog_category.id as idcategory')
             ->where('blog_post.id','=',$id)
             ->first();
-
-        dd($post);
 
         $categorys = BlogCategory::select('blog_category.id','blog_category.BC_NAME')
             ->where('blog_category.BC_SUBCATEGORYID','=',0)

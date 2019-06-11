@@ -60,11 +60,20 @@
                         	@csrf
                             <label for="post_category">سرتیتر وبلاگ</label>
                             <div class="form-group">                                
-                    	        <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TITLE}}" placeholder="سرتیتر وبلاگ را وارد نمایید ">
+                                <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_METATAG_DESCRIPTION}}" >
+                            </div>
+                            <div class="form-group">                                
+                                <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TITLE_PAGE}}" >
+                            </div>
+                            <div class="form-group">                                
+                                <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TAG_H1}}" >
+                            </div>
+                            <div class="form-group">                                
+                    	        <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TITLE}}" >
                             </div>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <textarea rows="4" class="form-control no-resize" name="postlessdesc" placeholder="لطفا آنچه را که میخواهید تایپ کنید...">
+                                    <textarea rows="4" class="form-control no-resize" name="postlessdesc" >
                                         {{$post->BP_DESS}}
                                     </textarea>
                                 </div>
@@ -77,7 +86,7 @@
                                     <h2><strong>انتخاب</strong>دسته بندی</h2>
                                 </div>
                                 <select class="form-control show-tick ms select2" name="category" data-placeholder="انتخاب">
-                                    <option value="$post->category_id">{{$post->BC_NAME}}</option>
+                                    <option value="$post->idcategory">{{$post->BC_NAME}}</option>
                                     @foreach($categorys as $category)
                                         <option value="{{$category->id}}">{{$category->BC_NAME}}</option>
                                     @endforeach
@@ -94,6 +103,38 @@
                             </div> 
                             <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">ثبت</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card">                    
+                        <div class="tab-content">
+                            <div class="tab-pane active" >
+                                <div class="row clearfix">
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <a href="javascript:void(0);" class="file">
+                                                <div class="hover">
+                                                    <button type="button" class="btn btn-icon btn-icon-mini btn-round btn-danger">
+                                                        <i class="zmdi zmdi-delete"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="image">
+                                                    <img src="{{asset('images/post-images')}}/{{ $post->bf_source }}" alt="img" class="img-fluid">
+                                                </div>
+                                                <div class="file-name">
+                                                    <p class="m-b-5 text-muted">img21545ds.jpg</p>
+                                                    <small>اندازه: 2 مگابایت <span class="date">11 دسامبر 2019</span></small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                   
+                        </div>
                     </div>
                 </div>
             </div>
