@@ -59,7 +59,6 @@
 <script src="{{asset('assetsadmin/assets/bundles/jvectormap.bundle.js')}}"></script> <!-- JVectorMap Plugin Js -->
 <script src="{{asset('assetsadmin/assets/bundles/sparkline.bundle.js')}}"></script> <!-- Sparkline Plugin Js -->
 <script src="{{asset('assetsadmin/assets/bundles/c3.bundle.js')}}"></script>
-<script src="{{asset('assetsadmin/assets/bundles/mainscripts.bundle.js')}}"></script>
 <script src="{{asset('assetsadmin/assets/js/pages/index.js')}}"></script>
 <!-- Main -->
 
