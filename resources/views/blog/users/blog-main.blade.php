@@ -20,12 +20,11 @@
           <div class="col-xl-9 col-lg-8 text-right">
 
             @foreach($blogposts as $index => $item)
-
               <!-- Post-->
               <article class="row bg-white soft-shadow pt-3 mb-3">
                 <div class="col-md-3">
                   <ul class="post-meta">
-                    <li><i class="icon-clock"></i><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}">&nbsp;{{\Morilog\Jalali\CalendarUtils::strftime('Y-m-d', strtotime($item->CREATED_AT))}}</a></li>
+                    <li><i class="icon-clock"></i><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE_PAGE])}}">&nbsp;{{\Morilog\Jalali\CalendarUtils::strftime('Y-m-d', strtotime($item->CREATED_AT))}}</a></li>
                     <li><i class="icon-head"></i>&nbsp; {{ $item->name }}</li>
                     <li><i class="icon-tag"></i>
 
@@ -40,11 +39,11 @@
                     @endforeach
 
                     </li>
-                    <li><i class="icon-speech-bubble"></i><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}">&nbsp; {{$item->comments}} دیدگاه</a></li>
+                    <li><i class="icon-speech-bubble"></i><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE_PAGE])}}">&nbsp; {{$item->comments}} دیدگاه</a></li>
                   </ul>
                 </div>
 
-                <div class="col-md-9 blog-post"><a class="post-thumb" href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}">
+                <div class="col-md-9 blog-post"><a class="post-thumb" href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE_PAGE])}}">
 
 
                   <?php
@@ -59,10 +58,10 @@
 
                 </a>
 
-                  <h3 class="post-title"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}">{{ $item->BP_TITLE }} </a></h3>
+                  <h3 class="post-title"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE_PAGE])}}">{{ $item->BP_TITLE }} </a></h3>
                   <p>{{ $item->BP_DESS }}</p>
                 </br>
-                  <a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}" class='btn btn-primary' style="margin: auto;"> بیشتر بخوانید </a>
+                  <a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE_PAGE])}}" class='btn btn-primary' style="margin: auto;"> بیشتر بخوانید </a>
                 </div>
               </article>
 
@@ -111,9 +110,9 @@
 
                   ?>
                 <div class="entry">
-                  <div class="entry-thumb"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}"><img src="{{asset('img/blog')}}/{{$file}}" alt="Post"></a></div>
+                  <div class="entry-thumb"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE_PAGE])}}"><img src="{{asset('images/post-images')}}/{{$file}}" alt="Post"></a></div>
                   <div class="entry-content">
-                    <h4 class="entry-title"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}">{{$item->BP_TITLE}}</a></h4><span class="entry-meta">توسط {{$item->name}}</span>
+                    <h4 class="entry-title"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE_PAGE])}}">{{$item->BP_TITLE}}</a></h4><span class="entry-meta">توسط {{$item->name}}</span>
                   </div>
                 </div>
                @endif

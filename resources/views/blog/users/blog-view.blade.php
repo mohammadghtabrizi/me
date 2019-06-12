@@ -292,9 +292,9 @@
 
                   ?>
                 <div class="entry">
-                  <div class="entry-thumb"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}"><img src="{{asset('images/post-images')}}/{{$file}}" alt="Post"></a></div>
+                  <div class="entry-thumb"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE_PAGE])}}"><img src="{{asset('images/post-images')}}/{{$file}}" alt="Post"></a></div>
                   <div class="entry-content">
-                    <h4 class="entry-title"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE])}}">{{$item->BP_TITLE}}</a></h4><span class="entry-meta">توسط {{$item->name}}</span>
+                    <h4 class="entry-title"><a href="{{route('show_post',['id' => $item->id,'slug' => $item->BP_TITLE_PAGE])}}">{{$item->BP_TITLE}}</a></h4><span class="entry-meta">توسط {{$item->name}}</span>
                   </div>
                 </div>
                @endif

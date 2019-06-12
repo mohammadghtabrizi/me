@@ -6,13 +6,13 @@
       <!-- Product-->
       <div class="grid-item">
         <div class="product-card">
-          <a class="product-thumb" href="{{route('show_post',['id' => $view->id,'slug' => $view->BP_TITLE])}}"><img src="{{ asset('img/blog') }}/{{$view->bf_source}}" alt="{{ $view->BP_TITLE }}"></a>
-          <h3 class="product-title"><a href="{{route('show_post',['id' => $view->id,'slug' => $view->BP_TITLE])}}">{{ $view->BP_TITLE }}</a></h3>
+          <a class="product-thumb" href="{{route('show_post',['id' => $view->id,'slug' => $view->BP_TITLE_PAGE])}}"><img src="{{ asset('images/post-images') }}/{{$view->bf_source}}" alt="{{ $view->BP_TITLE }}"></a>
+          <h3 class="product-title"><a href="{{route('show_post',['id' => $view->id,'slug' => $view->BP_TITLE_PAGE])}}">{{ $view->BP_TITLE }}</a></h3>
           <h4 class="product-price">
           <span>{{ $view->BP_DESS }}</span>
           </h4>
           <div class="product-buttons">
-            <form method="get" action="{{route('show_post',['id' => $view->id,'slug' => $view->BP_TITLE])}}">
+            <form method="get" action="{{route('show_post',['id' => $view->id,'slug' => $view->BP_TITLE_PAGE])}}">
               <button class="btn btn-outline-primary btn-sm" type="submit">نمایش بلاگ</button>
             </form>
           </div>

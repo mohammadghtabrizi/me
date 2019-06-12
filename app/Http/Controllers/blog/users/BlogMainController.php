@@ -32,15 +32,28 @@ class BlogMainController extends Controller
         
         $taag = BlogTag::select(['blog_tag.*'])->get();
 
-        $blogposts = BlogPost::join('users','blog_post.bp_userid','=','users.id')->select('users.name','blog_post.*')->orderBy('blog_post.CREATED_AT','desc')->with(['tags'])->paginate(5);
+        $blogposts = BlogPost::join('users','blog_post.bp_userid','=','users.id')
+            ->select('users.name','blog_post.*')
+            ->where('blog_post.BP_DISPLAYSTATUS','=',1)
+            ->orderBy('blog_post.CREATED_AT','desc')
+            ->with(['tags'])
+            ->paginate(5);
 
-        $blogpostcategory = BlogCategory::select(['blog_category.*'])->where('blog_category.bc_subcategoryid','=',0)->withCount('posts')->get();
+        $blogpostcategory = BlogCategory::select(['blog_category.*'])
+            ->where('blog_category.bc_subcategoryid','=',0)
+            ->where('blog_category.BC_DISPLAYSTATUS','=',1)
+            ->withCount('posts')
+            ->get();
 
         foreach ($blogposts as $index => $item){
 
-            $blogposts[$index]['files'] = BlogFile::select(['blog_files.bf_source'])->where('blog_files.bf_idpost','=',$item->id)->get();
+            $blogposts[$index]['files'] = BlogFile::select(['blog_files.bf_source'])
+                ->where('blog_files.bf_idpost','=',$item->id)
+                ->get();
 
-            $blogposts[$index]['comments'] = BlogComment::select(['blog_comment.bc_comment'])->where('blog_comment.bc_postid','=',$item->id)->count();
+            $blogposts[$index]['comments'] = BlogComment::select(['blog_comment.bc_comment'])
+                ->where('blog_comment.bc_postid','=',$item->id)
+                ->count();
 
             
         }
@@ -67,10 +80,15 @@ class BlogMainController extends Controller
 
         $headerpage = 'امداد بلاگ';
 
-        $idcheck = BlogPost::select('blog_post.id')->where('blog_post.id','=',$id)->count();
+        $idcheck = BlogPost::select('blog_post.id')
+            ->where('blog_post.id','=',$id)
+            ->where('blog_post.BP_DISPLAYSTATUS','=',1)
+            ->count();
         if($idcheck==0){
 
-            $blogpost = BlogPost::select('blog_post.id')->paginate(1);
+            $blogpost = BlogPost::select('blog_post.id')
+                ->where('blog_post.BP_DISPLAYSTATUS','=',1)
+                ->paginate(1);
         
             foreach ($blogpost as $valueid) {
                 $id = $valueid->id;
@@ -95,7 +113,12 @@ class BlogMainController extends Controller
 
         $activeMenu = 'blog';
 
-        $blogpost = BlogPost::join('users','blog_post.bp_userid','=','users.id')->select('users.*','blog_post.*')->where('blog_post.id','=',$id)->with(['tags'])->paginate(1);
+        $blogpost = BlogPost::join('users','blog_post.bp_userid','=','users.id')
+            ->select('users.*','blog_post.*')
+            ->where('blog_post.BP_DISPLAYSTATUS','=',1)
+            ->where('blog_post.id','=',$id)
+            ->with(['tags'])
+            ->paginate(1);
 
              
         foreach ($blogpost as $bp){
@@ -274,7 +297,13 @@ class BlogMainController extends Controller
         
         $taag = BlogTag::select(['blog_tag.*'])->get();
 
-        $blogposts = BlogPost::join('users','blog_post.bp_userid','=','users.id')->select('users.name','blog_post.*')->where('blog_post.BP_TITLE','like','%'.$request->get('blogsearch').'%')->orderBy('blog_post.CREATED_AT','desc')->with(['tags'])->paginate(5);
+        $blogposts = BlogPost::join('users','blog_post.bp_userid','=','users.id')
+            ->select('users.name','blog_post.*')
+            ->where('blog_post.BP_DISPLAYSTATUS','=',1)
+            ->where('blog_post.BP_TITLE','like','%'.$request->get('blogsearch').'%')
+            ->orderBy('blog_post.CREATED_AT','desc')
+            ->with(['tags'])
+            ->paginate(5);
 
         if ($blogposts->isEmpty()){
 
@@ -324,7 +353,13 @@ class BlogMainController extends Controller
         
         $taag = BlogTag::select(['blog_tag.*'])->get();
 
-        $blogposts = BlogPost::join('users','blog_post.bp_userid','=','users.id')->select('users.name','blog_post.*')->where('blog_post.BP_CATID','=',$id)->orderBy('blog_post.CREATED_AT','desc')->with(['tags'])->paginate(5);
+        $blogposts = BlogPost::join('users','blog_post.bp_userid','=','users.id')
+        ->select('users.name','blog_post.*')
+        ->where('blog_post.BP_CATID','=',$id)
+        ->where('blog_post.BP_DISPLAYSTATUS','=',1)
+        ->orderBy('blog_post.CREATED_AT','desc')
+        ->with(['tags'])
+        ->paginate(5);
 
 
         if ($blogposts->isEmpty()){

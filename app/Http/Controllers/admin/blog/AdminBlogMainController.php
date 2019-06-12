@@ -9,6 +9,9 @@ use App\BlogPost;
 use App\BlogCategory;
 use App\Users;
 use App\BlogFile;
+use App\BlogTag;
+
+use File;
 
 class AdminBlogMainController extends Controller
 {
@@ -251,9 +254,12 @@ class AdminBlogMainController extends Controller
     public function editpost($id){
 
         $post = BlogPost::join('blog_category','blog_post.BP_CATID','=','blog_category.id')
-            ->join('blog_files','blog_post.id','=','blog_files.bf_idpost')
-            ->select('blog_post.*','blog_files.bf_source','blog_category.BC_NAME','blog_category.id as idcategory')
+            ->select('blog_post.*','blog_category.BC_NAME','blog_category.id as idcategory')
             ->where('blog_post.id','=',$id)
+            ->first();
+
+        $files = BlogFile::select('blog_files.*')
+            ->where('blog_files.bf_idpost','=',$post->id)
             ->first();
 
         $categorys = BlogCategory::select('blog_category.id','blog_category.BC_NAME')
@@ -264,7 +270,114 @@ class AdminBlogMainController extends Controller
 
             'post' => $post,
 
-            'categorys' => $categorys
+            'categorys' => $categorys,
+
+            'files' => $files
         ]);
+    }
+
+    public function editpostact(Request $request,$id){
+
+
+        $newfile = new BlogFile();
+
+        $post = BlogPost::find($id);
+
+        $post->BP_METATAG_DESCRIPTION = $request->get('metatagdescription');
+        $post->BP_TITLE_PAGE = $request->get('titlepage');
+        $post->BP_TAG_H1 = $request->get('h1');
+        $post->BP_TITLE = $request->get('posttitre');
+        $post->BP_DESS = $request->get('postlessdesc');
+        $post->BP_DESL = $request->get('postlongdesc');
+        $post->BP_CATID = $request->get('category');
+
+        $post->save();
+
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/post-images');
+            $image->move($destinationPath, $name);  
+        }
+
+        $newfile->bf_idpost = $post->id; 
+        $newfile->bf_source = $name;
+        $newfile->bf_default = 1;
+
+        $newfile->save();
+        
+
+        return redirect()->back();
+    }
+
+    public function deletepostpicture($id){
+
+        $image = BlogFile::select('blog_files.*')
+            ->where('blog_files.id','=',$id)
+            ->delete();
+
+        return redirect()->back();
+    }
+
+    public function indextags(){
+
+        $tags = BlogTag::select('blog_tag.*')
+            ->paginate(25);
+
+        return view('admin/blog/tags-show')->with([
+
+            'tags' => $tags
+
+        ]);
+    }
+
+    public function addtag(){
+
+        return view('admin/blog/tag-add');
+    }
+
+    public function addtagact(Request $request){
+
+        $newtag = new BlogTag();
+
+        $newtag->BT_VALUE = $request->get('posttag');
+
+        $newtag->save();
+
+        return redirect()->back();
+    }
+
+    public function deletetag($id){
+
+        $deletetag = BlogTag::find($id)->delete();
+
+        return redirect()->back();
+
+    }
+
+    public function edittag($id){
+
+        $edittag = BlogTag::find($id);
+
+        return view('admin/blog/tag-edit')->with([
+
+            'edittag' => $edittag
+        ]);
+    }
+
+    public function edittagact(Request $request,$id){
+
+        $edittag = BlogTag::find($id);
+
+        $edittag->BT_VALUE = $request->get('posttag');
+
+        $edittag->save();
+
+        return redirect()->route('admin_tags_blog_index');
+
     }
 }

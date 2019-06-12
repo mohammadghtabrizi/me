@@ -63,6 +63,21 @@ Route::group(['prefix' => 'admin'],function(){
 			Route::post('/add_post','admin\blog\AdminBlogMainController@addpostact')->name('add_post_act');
 
 			Route::get('/edit_post/{id}','admin\blog\AdminBlogMainController@editpost')->name('edit_post');
+
+			Route::post('/edit_post_act/{id}','admin\blog\AdminBlogMainController@editpostact')->name('edit_post_act');
+
+			Route::get('/delete_post_picture/{id}','admin\blog\AdminBlogMainController@deletepostpicture')->name('delete_post_picture');
+			Route::get('/admin_tags_blog_index','admin\blog\AdminBlogMainController@indextags')->name('admin_tags_blog_index');
+
+			Route::get('/add_tag_post','admin\blog\AdminBlogMainController@addtag')->name('add_tag_post');
+
+			Route::post('/add_tag_post_act','admin\blog\AdminBlogMainController@addtagact')->name('add_tag_post_act');
+
+			Route::get('/delete_tag/{id}','admin\blog\AdminBlogMainController@deletetag')->name('delete_tag');
+
+			Route::get('/edit_tag/{id}','admin\blog\AdminBlogMainController@edittag')->name('edit_tag');
+
+			Route::post('/edit_tag_act/{id}','admin\blog\AdminBlogMainController@edittagact')->name('edit_tag_act');
 		});
 
 		/*Admin Blog Section*/

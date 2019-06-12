@@ -56,57 +56,56 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <form method="POST" action="#">
+                        <form enctype="multipart/form-data" method="POST" action="{{route('edit_post_act',['id' => $post->id])}}">
                         	@csrf
                             <label for="post_category">سرتیتر وبلاگ</label>
                             <div class="form-group">                                
-                                <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_METATAG_DESCRIPTION}}" >
+                                <input type="text" id="post_category" class="form-control" name="metatagdescription" value="{{$post->BP_METATAG_DESCRIPTION}}">
                             </div>
                             <div class="form-group">                                
-                                <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TITLE_PAGE}}" >
+                                <input type="text" id="post_category" class="form-control" name="titlepage" value="{{$post->BP_TITLE_PAGE}}">
                             </div>
                             <div class="form-group">                                
-                                <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TAG_H1}}" >
+                                <input type="text" id="post_category" class="form-control" name="h1" value="{{$post->BP_TAG_H1}}">
                             </div>
                             <div class="form-group">                                
-                    	        <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TITLE}}" >
+                    	        <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TITLE}}">
                             </div>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <textarea rows="4" class="form-control no-resize" name="postlessdesc" >
-                                        {{$post->BP_DESS}}
-                                    </textarea>
+                                    <textarea type="textarea" rows="4" class="form-control no-resize" name="postlessdesc" >{{$post->BP_DESS}}</textarea>
                                 </div>
                             </div>
-                            <textarea class="summernote" name="postlongdesc">
-                                {!!$post->BP_DESL!!}
-                            </textarea>
+                            <textarea type="textarea" class="summernote" name="postlongdesc" >{{$post->BP_DESL}}</textarea>
                             <div class="card">
                                 <div class="header">
                                     <h2><strong>انتخاب</strong>دسته بندی</h2>
                                 </div>
                                 <select class="form-control show-tick ms select2" name="category" data-placeholder="انتخاب">
-                                    <option value="$post->idcategory">{{$post->BC_NAME}}</option>
+                                    <option value="{{$post->idcategory}}">{{$post->BC_NAME}}</option>
                                     @foreach($categorys as $category)
                                         <option value="{{$category->id}}">{{$category->BC_NAME}}</option>
                                     @endforeach
                                 </select>
                             </div>
+                            @if(is_null($files))
                             <div class="card">
                                 <div class="header">
                                     <h2><strong>اندازه فایل</strong> محدود</h2>
                                 </div>
                                 <div class="body">
                                     <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="imagepost" data-max-file-size="1000K">
+                                    <input type="file" class="dropify" name="image" data-max-file-size="1000K">
                                 </div>
-                            </div> 
+                            </div>
+                            @endif
                             <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">ثبت</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        @if(!is_null($files))
         <div class="container-fluid">
             <div class="row clearfix">
                 <div class="col-lg-12">
@@ -116,14 +115,14 @@
                                 <div class="row clearfix">
                                     <div class="col-lg-3 col-md-4 col-sm-12">
                                         <div class="card">
-                                            <a href="javascript:void(0);" class="file">
+                                            <a href="{{route('delete_post_picture',['id' => $files->id])}}" class="file">
                                                 <div class="hover">
                                                     <button type="button" class="btn btn-icon btn-icon-mini btn-round btn-danger">
                                                         <i class="zmdi zmdi-delete"></i>
                                                     </button>
                                                 </div>
                                                 <div class="image">
-                                                    <img src="{{asset('images/post-images')}}/{{ $post->bf_source }}" alt="img" class="img-fluid">
+                                                    <img src="{{asset('images/post-images')}}/{{ $files->bf_source }}" alt="img" class="img-fluid">
                                                 </div>
                                                 <div class="file-name">
                                                     <p class="m-b-5 text-muted">img21545ds.jpg</p>
@@ -139,6 +138,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 </section>
 
