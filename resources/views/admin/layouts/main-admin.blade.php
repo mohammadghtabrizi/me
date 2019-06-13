@@ -17,6 +17,8 @@
 <link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/summernote/dist/summernote.css')}}"/>
 <link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/morrisjs/morris.min.css')}}" />
 
+@yield('styles')
+
 <!-- For Upload Image -->
 <link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/dropify/css/dropify.min.css')}}">
 <!-- For Upload Image -->

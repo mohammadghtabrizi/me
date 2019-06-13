@@ -13,6 +13,8 @@ use App\BlogTag;
 
 use File;
 
+use Validator;
+
 class AdminBlogMainController extends Controller
 {
 
@@ -202,9 +204,13 @@ class AdminBlogMainController extends Controller
             ->where('blog_category.BC_SUBCATEGORYID','=',0)
             ->get();
 
+        $tags = BlogTag::pluck('BT_VALUE','id')->toArray();
+
         return view('admin/blog/post-add')->with([
 
-            'categorys' => $categorys
+            'categorys' => $categorys,
+
+            'tags' => $tags
 
         ]);
 
@@ -213,10 +219,25 @@ class AdminBlogMainController extends Controller
 
     public function addpostact(Request $request){
 
+        $rules = [
 
-        $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ];
+
+        $attributes = [
+
+            'image' => 'تصویر'
+
+        ];
+
+        $validator = Validator::make($request->all(),$rules,[],$attributes);
+
+        if($validator->fails()){
+            
+            return redirect()->back()->withErrors($validator);
+
+        }
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -316,9 +337,19 @@ class AdminBlogMainController extends Controller
 
     public function deletepostpicture($id){
 
-        $image = BlogFile::select('blog_files.*')
-            ->where('blog_files.id','=',$id)
-            ->delete();
+        $file = BlogFile::where('blog_files.id','=',$id)
+            ->select(['id','bf_source'])
+            ->first();
+
+        abort_if(is_null($file),404);
+
+        if(file_exists('images/post-images/'.$file->bf_source)){
+
+            unlink('images/post-images/'.$file->bf_source);
+
+        }
+
+        $file->delete();
 
         return redirect()->back();
     }

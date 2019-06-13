@@ -1,5 +1,11 @@
 @extends('admin.layouts.main-admin')
 
+
+@section('styles')
+
+    
+@stop
+
 @section('main-content-admin')
 
 <!-- Right Icon menu Sidebar -->
@@ -88,6 +94,15 @@
                                     @endforeach
                                 </select>
                             </div>
+
+                            
+                            <div class="form-group mb-0">
+                                <p>انتخاب برچسب های پست</p>
+                                <div class="form-line">
+                                    <input type="text" class="form-control" style="width: 100%" id="tagstype">
+                                </div>
+                            </div>
+
                             <div class="card">
                                 <div class="header">
                                     <h2><strong>اندازه فایل</strong> محدود</h2>
@@ -105,6 +120,14 @@
         </div>
     </div>
 </section>
+
+
+@stop
+
+@section('scripts')
+
+
+    
 
 
 @stop
