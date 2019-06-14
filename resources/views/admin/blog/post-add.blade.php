@@ -2,8 +2,21 @@
 
 
 @section('styles')
+<!-- Colorpicker Css -->
+<link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css')}}" />
+<!-- Multi Select Css -->
+<link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/multi-select/css/multi-select.css')}}">
+<!-- Bootstrap Spinner Css -->
+<link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/jquery-spinner/css/bootstrap-spinner.css')}}">
+<!-- Bootstrap Tagsinput Css -->
+<link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<!-- Bootstrap Select Css -->
+<link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/bootstrap-select/css/bootstrap-select.css')}}" />
+<!-- noUISlider Css -->
+<link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/nouislider/nouislider.min.css')}}" />
+<!-- Select2 -->
+<link rel="stylesheet" href="{{asset('assetsadmin/assets/plugins/select2/select2.css')}}" />
 
-    
 @stop
 
 @section('main-content-admin')
@@ -82,7 +95,11 @@
                                     <textarea rows="4" class="form-control no-resize" name="postlessdesc" placeholder="لطفا آنچه را که میخواهید تایپ کنید..."></textarea>
                                 </div>
                             </div>
-                            <textarea class="summernote" name="postlongdesc"></textarea>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <textarea class="summernote" name="postlongdesc"></textarea>
+                                </div>
+                            </div>
                             <div class="card">
                                 <div class="header">
                                     <h2><strong>انتخاب</strong>دسته بندی</h2>
@@ -94,15 +111,18 @@
                                     @endforeach
                                 </select>
                             </div>
-
-                            
-                            <div class="form-group mb-0">
-                                <p>انتخاب برچسب های پست</p>
+                            <div class="form-group">
+                                <p>تگ ها</p>
                                 <div class="form-line">
-                                    <input type="text" class="form-control" style="width: 100%" id="tagstype">
+                                    <select class="form-control show-tick ms select2" id="mySelect2" multiple data-placeholder="انتخاب">
+                                        <option>Mustard</option>
+                                        <option>Ketchup</option>
+                                        <option>Relish</option>
+                                    </select>
                                 </div>
                             </div>
 
+                            <button type="button" id="senddataajax">send</button>
                             <div class="card">
                                 <div class="header">
                                     <h2><strong>اندازه فایل</strong> محدود</h2>
@@ -125,8 +145,26 @@
 @stop
 
 @section('scripts')
+<script>
+    
+    $(document).ready(function(){
+
+        $(#senddataajax).click(function(){
+
+            $("#mySelect2").select2("val");
+        })
+    })
+</script>
 
 
+<script src="{{asset('assetsadmin/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js')}}"></script> <!-- Bootstrap Colorpicker Js --> 
+<script src="{{asset('assetsadmin/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js')}}"></script> <!-- Input Mask Plugin Js --> 
+<script src="{{asset('assetsadmin/assets/plugins/multi-select/js/jquery.multi-select.js')}}"></script> <!-- Multi Select Plugin Js -->
+<script src="{{asset('assetsadmin/assets/plugins/jquery-spinner/js/jquery.spinner.js')}}"></script> <!-- Jquery Spinner Plugin Js --> 
+<script src="{{asset('assetsadmin/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script> <!-- Bootstrap Tags Input Plugin Js --> 
+<script src="{{asset('assetsadmin/assets/plugins/nouislider/nouislider.js')}}"></script> <!-- noUISlider Plugin Js -->
+<script src="{{asset('assetsadmin/assets/plugins/select2/select2.min.js')}}"></script> <!-- Select2 Js -->
+<script src="{{asset('assetsadmin/assets/js/pages/forms/advanced-form-elements.js')}}"></script> 
     
 
 
