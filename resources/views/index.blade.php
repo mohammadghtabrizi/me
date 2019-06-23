@@ -112,9 +112,9 @@
                   <label class="col-2 col-form-label" for="select-input3" style="max-width: 70%;">زمان مراجعه  کارشناس</label>
                   <select class="form-control" id="select-input3" name="time">
                     <option></option>
-                    <option value="1">ساعت 9 صبح ال 12 ظهر</option>
-                    <option value="2">ساعت 12 ظهر تا 16عصر</option>
-                    <option value="3">ساعت 16 الی 19 عصر</option>
+                    <option value="1">ساعت 9 الی 12</option>
+                    <option value="2">ساعت 12 الی 16</option>
+                    <option value="3">ساعت 16 الی 19</option>
                   </select>
                 </div>
               </div>

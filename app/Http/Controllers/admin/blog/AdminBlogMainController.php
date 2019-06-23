@@ -242,7 +242,8 @@ class AdminBlogMainController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/images/post-images');
+            $destinationPath = public_path('/images/post-images/');
+            dd($destinationPath.$name);
             $image->move($destinationPath, $name);  
         }
 
