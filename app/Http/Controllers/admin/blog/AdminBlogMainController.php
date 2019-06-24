@@ -243,10 +243,19 @@ class AdminBlogMainController extends Controller
             $image = $request->file('image');
             $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/images/post-images/');
-            dd($destinationPath.$name);
             $image->move($destinationPath, $name);  
         }
 
+        $spost = $request->get('special-post');
+
+        if(!is_null($spost) && $spost == 1){
+
+            $specialpost = 1;
+        }
+        else{
+
+            $specialpost = 0;
+        }
         $newfile = new BlogFile();
 
         $newpost = new BlogPost();
@@ -256,6 +265,7 @@ class AdminBlogMainController extends Controller
         $newpost->BP_DESL = $request->get('postlongdesc');
         $newpost->BP_CATID = $request->get('category');
         $newpost->BP_USERID = 17;
+        $newpost->BP_BESTPOST = $specialpost;
         $newpost->BP_METATAG_DESCRIPTION = $request->get('metatagdescription');
         $newpost->BP_TITLE_PAGE = $request->get('titlepage');
         $newpost->BP_TAG_H1 = $request->get('h1');
@@ -300,11 +310,22 @@ class AdminBlogMainController extends Controller
 
     public function editpostact(Request $request,$id){
 
+        $spost = $request->get('special-post');
+        if(!is_null($spost) && $spost == 1){
+
+            $specialpost = 1;
+        }
+        else{
+
+            $specialpost = 0;
+        }
+
 
         $newfile = new BlogFile();
 
         $post = BlogPost::find($id);
 
+        $post->BP_BESTPOST = $specialpost;
         $post->BP_METATAG_DESCRIPTION = $request->get('metatagdescription');
         $post->BP_TITLE_PAGE = $request->get('titlepage');
         $post->BP_TAG_H1 = $request->get('h1');

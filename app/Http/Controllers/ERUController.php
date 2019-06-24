@@ -27,7 +27,7 @@ class ERUController extends Controller
         $activeMenu = 'home';
 
         $blogviewed = BlogPost::join('blog_files','blog_post.id','=','blog_files.bf_idpost')
-            ->where('blog_files.bf_default',true)
+            ->where('blog_files.bf_default','=',1)
             ->where('blog_post.BP_VIEWED','>',25)
             ->where('blog_post.BP_DISPLAYSTATUS','=',1)
             ->select('blog_post.*','blog_files.bf_source')

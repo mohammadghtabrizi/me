@@ -49,10 +49,7 @@
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">                
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
-                    <form method="get" action="{{route('admin_blog_index')}}">
-                        @csrf
-                        <button class="btn btn-success btn-icon float-right" type="submit" ><i class="zmdi zmdi-check"></i></button>
-                    </form>
+                    <a href="{{route('admin_blog_index')}}" class="btn btn-info btn-icon float-right"><i class="zmdi zmdi-check"></i></a>
                 </div>
             </div>
         </div>
@@ -95,56 +92,52 @@
                                     <textarea rows="4" class="form-control no-resize" name="postlessdesc" placeholder="لطفا آنچه را که میخواهید تایپ کنید..."></textarea>
                                 </div>
                             </div>
-                            <div class="body">
-                                <p>CKEditor یک ویرایشگر متن HTML آماده برای استفاده است که برای ایجاد محتوای وب ساده تر طراحی شده است. گرفته شده از <a href="http://ckeditor.com/" target="_blank">ckeditor.com</a></p>
-                                <textarea id="ckeditor">
-                                    <h2>WYSIWYG ویرایشگر</h2>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
-                                    <h3>لورم اپیزوم</h3>
-                                    <ul>
-                                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                        <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                    </ul>
-                                    <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h3>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
-                                </textarea>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <p>CKEditor یک ویرایشگر متن HTML آماده برای استفاده است که برای ایجاد محتوای وب ساده تر طراحی شده است. گرفته شده از <a href="http://ckeditor.com/" target="_blank">ckeditor.com</a></p>
+                                    <textarea id="ckeditor">
+                                        <h2>WYSIWYG ویرایشگر</h2>
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
+                                        <h3>لورم اپیزوم</h3>
+                                        <ul>
+                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
+                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
+                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
+                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
+                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
+                                        </ul>
+                                        <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h3>
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
+                                    </textarea>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-line">
                                     <textarea class="summernote" name="postlongdesc"></textarea>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="header">
-                                    <h2><strong>انتخاب</strong>دسته بندی</h2>
-                                </div>
-                                <select class="form-control show-tick ms select2" name="category" data-placeholder="انتخاب">
-                                    <option></option>
-                                    @foreach($categorys as $category)
-                                        <option value="{{$category->id}}">{{$category->BC_NAME}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
                             <div class="form-group">
-                                <p>تگ ها</p>
                                 <div class="form-line">
-                                    <select class="form-control show-tick ms select2" id="mySelect2" multiple data-placeholder="انتخاب">
-                                        <option>Mustard</option>
-                                        <option>Ketchup</option>
-                                        <option>Relish</option>
+                                    <select class="form-control show-tick ms select2" name="category" data-placeholder="انتخاب دسته بندی">
+                                        <option></option>
+                                        @foreach($categorys as $category)
+                                            <option value="{{$category->id}}">{{$category->BC_NAME}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
-
-                            <button type="button" id="senddataajax">send</button>
-                            <div class="card">
-                                <div class="header">
-                                    <h2><strong>اندازه فایل</strong> محدود</h2>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <div class="checkbox">
+                                        <input id="special-post" type="checkbox" name="special-post" value="1">
+                                        <label for="special-post">
+                                                مرا به خاطر بسپار
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="body">
+                            </div>
+                            <div class="form-group">
+                                <div class="form-line">
                                     <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
                                     <input type="file" class="dropify" name="image" data-max-file-size="1000K">
                                 </div>
@@ -162,16 +155,7 @@
 @stop
 
 @section('scripts')
-<script>
-    
-    $(document).ready(function(){
 
-        $(#senddataajax).click(function(){
-
-            $("#mySelect2").select2("val");
-        })
-    })
-</script>
 
 
 <script src="{{asset('assetsadmin/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js')}}"></script> <!-- Bootstrap Colorpicker Js --> 
@@ -184,7 +168,6 @@
 <script src="{{asset('assetsadmin/assets/js/pages/forms/advanced-form-elements.js')}}"></script> 
 
 <script src="{{asset('assetsadmin/assets/plugins/ckeditor/ckeditor.js')}}"></script> <!-- Ckeditor --> 
-
 <script src="{{asset('assetsadmin/assets/bundles/mainscripts.bundle.js')}}"></script><!-- Custom Js --> 
 <script src="{{asset('assetsadmin/assets/js/pages/forms/editors.js')}}"></script>
     

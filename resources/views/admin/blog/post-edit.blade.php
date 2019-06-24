@@ -30,10 +30,7 @@
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">                
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
-                    <form method="get" action="{{route('admin_blog_index')}}">
-                        @csrf
-                        <button class="btn btn-success btn-icon float-right" type="submit" ><i class="zmdi zmdi-check"></i></button>
-                    </form>
+                    <a href="{{route('admin_blog_index')}}" class="btn btn-info btn-icon float-right"><i class="zmdi zmdi-check"></i></a>
                 </div>
             </div>
         </div>
@@ -59,41 +56,64 @@
                         <form enctype="multipart/form-data" method="POST" action="{{route('edit_post_act',['id' => $post->id])}}">
                         	@csrf
                             <label for="post_category">سرتیتر وبلاگ</label>
-                            <div class="form-group">                                
-                                <input type="text" id="post_category" class="form-control" name="metatagdescription" value="{{$post->BP_METATAG_DESCRIPTION}}">
+                            <div class="form-group">
+                                <div class="form-line">                                
+                                    <input type="text" id="post_category" class="form-control" name="metatagdescription" value="{{$post->BP_METATAG_DESCRIPTION}}">
+                                </div>
                             </div>
-                            <div class="form-group">                                
-                                <input type="text" id="post_category" class="form-control" name="titlepage" value="{{$post->BP_TITLE_PAGE}}">
+                            <div class="form-group">
+                                <div class="form-line">                             
+                                    <input type="text" id="post_category" class="form-control" name="titlepage" value="{{$post->BP_TITLE_PAGE}}">
+                                </div>
                             </div>
-                            <div class="form-group">                                
-                                <input type="text" id="post_category" class="form-control" name="h1" value="{{$post->BP_TAG_H1}}">
+                            <div class="form-group">
+                                <div class="form-line">                             
+                                    <input type="text" id="post_category" class="form-control" name="h1" value="{{$post->BP_TAG_H1}}">
+                                </div>
                             </div>
-                            <div class="form-group">                                
-                    	        <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TITLE}}">
+                            <div class="form-group">
+                                <div class="form-line">                              
+                    	           <input type="text" id="post_category" class="form-control" name="posttitre" value="{{$post->BP_TITLE}}">
+                               </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-line">
                                     <textarea type="textarea" rows="4" class="form-control no-resize" name="postlessdesc" >{{$post->BP_DESS}}</textarea>
                                 </div>
                             </div>
-                            <textarea type="textarea" class="summernote" name="postlongdesc" >{{$post->BP_DESL}}</textarea>
-                            <div class="card">
-                                <div class="header">
-                                    <h2><strong>انتخاب</strong>دسته بندی</h2>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <textarea type="textarea" class="summernote" name="postlongdesc" >{{$post->BP_DESL}}</textarea>
                                 </div>
-                                <select class="form-control show-tick ms select2" name="category" data-placeholder="انتخاب">
-                                    <option value="{{$post->idcategory}}">{{$post->BC_NAME}}</option>
-                                    @foreach($categorys as $category)
-                                        <option value="{{$category->id}}">{{$category->BC_NAME}}</option>
-                                    @endforeach
-                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select class="form-control show-tick ms select2" name="category" data-placeholder="انتخاب دسته بندی">
+                                        <option value="{{$post->idcategory}}">{{$post->BC_NAME}}</option>
+                                        @foreach($categorys as $category)
+                                            <option value="{{$category->id}}">{{$category->BC_NAME}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <div class="checkbox">
+                                        @if($post->BP_BESTPOST == 1)
+                                            <input id="special-post" type="checkbox" name="special-post" value="1" checked>
+                                        @endif
+                                        @if($post->BP_BESTPOST == 0)
+                                            <input id="special-post" type="checkbox" name="special-post" value="1">
+                                        @endif
+                                        <label for="special-post">
+                                                مرا به خاطر بسپار
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             @if(is_null($files))
-                            <div class="card">
-                                <div class="header">
-                                    <h2><strong>اندازه فایل</strong> محدود</h2>
-                                </div>
-                                <div class="body">
+                            <div class="form-group">
+                                <div class="form-line">
                                     <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
                                     <input type="file" class="dropify" name="image" data-max-file-size="1000K">
                                 </div>
