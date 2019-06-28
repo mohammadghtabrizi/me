@@ -94,25 +94,6 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <p>CKEditor یک ویرایشگر متن HTML آماده برای استفاده است که برای ایجاد محتوای وب ساده تر طراحی شده است. گرفته شده از <a href="http://ckeditor.com/" target="_blank">ckeditor.com</a></p>
-                                    <textarea id="ckeditor">
-                                        <h2>WYSIWYG ویرایشگر</h2>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
-                                        <h3>لورم اپیزوم</h3>
-                                        <ul>
-                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                            <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                        </ul>
-                                        <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h3>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
-                                    </textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-line">
                                     <textarea class="summernote" name="postlongdesc"></textarea>
                                 </div>
                             </div>
@@ -131,7 +112,7 @@
                                     <div class="checkbox">
                                         <input id="special-post" type="checkbox" name="special-post" value="1">
                                         <label for="special-post">
-                                                مرا به خاطر بسپار
+                                                مطالب ویژه
                                         </label>
                                     </div>
                                 </div>
@@ -167,9 +148,7 @@
 <script src="{{asset('assetsadmin/assets/plugins/select2/select2.min.js')}}"></script> <!-- Select2 Js -->
 <script src="{{asset('assetsadmin/assets/js/pages/forms/advanced-form-elements.js')}}"></script> 
 
-<script src="{{asset('assetsadmin/assets/plugins/ckeditor/ckeditor.js')}}"></script> <!-- Ckeditor --> 
-<script src="{{asset('assetsadmin/assets/bundles/mainscripts.bundle.js')}}"></script><!-- Custom Js --> 
-<script src="{{asset('assetsadmin/assets/js/pages/forms/editors.js')}}"></script>
+
     
 
 

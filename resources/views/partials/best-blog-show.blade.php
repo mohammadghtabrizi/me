@@ -6,7 +6,7 @@
       <!-- Product-->
       <div class="grid-item">
         <div class="product-card">
-          <a class="product-thumb" href="{{route('show_post',['id' => $view->id,'slug' => $view->BP_TITLE_PAGE])}}"><img src="{{ asset('images/post-images') }}/{{$view->bf_source}}" alt="{{ $view->BP_TITLE }}"></a>
+          <a class="product-thumb" href="{{route('show_post',['id' => $view->id,'slug' => $view->BP_TITLE_PAGE])}}"><img src="{{ asset('images/post-images') }}/{{$view->bf_source}}" alt="{{ $view->BP_TITLE }}"  style="height:300px;"></a>
           <h3 class="product-title"><a href="{{route('show_post',['id' => $view->id,'slug' => $view->BP_TITLE_PAGE])}}">{{ $view->BP_TITLE }}</a></h3>
           <h4 class="product-price">
           <span>{{ $view->BP_DESS }}</span>

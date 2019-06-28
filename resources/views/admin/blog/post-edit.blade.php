@@ -106,7 +106,7 @@
                                             <input id="special-post" type="checkbox" name="special-post" value="1">
                                         @endif
                                         <label for="special-post">
-                                                مرا به خاطر بسپار
+                                                مطالب ویژه
                                         </label>
                                     </div>
                                 </div>

@@ -248,7 +248,7 @@ class AdminBlogMainController extends Controller
 
         $spost = $request->get('special-post');
 
-        if(!is_null($spost) && $spost == 1){
+        if(!is_null($spost)){
 
             $specialpost = 1;
         }
