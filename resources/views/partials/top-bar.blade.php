@@ -16,14 +16,14 @@
 			<i class="socicon-instagram"></i>
 		</a>
 	</div>
-      <div class="topbar-column"><a class="hidden-md-down" href="#"><i class="icon-download"></i>&nbsp; دریافت اپ موبایل</a>
-        <div class="lang-currency-switcher-wrap">
-          <div class="lang-currency-switcher dropdown-toggle"><span class="language"><img alt="English" src="{{ asset('img/flags/FA.png') }}"></span><span class="currency">تومان</span></div>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#"><img src="{{ asset('img/flags/GB.png') }}" alt="Deutsch">English</a>
+	<div class="topbar-column"><a class="hidden-md-down" href="#"><i class="icon-download"></i>&nbsp; دریافت اپ موبایل</a>
+		<div class="lang-currency-switcher-wrap">
+		  <div class="lang-currency-switcher dropdown-toggle"><span class="language"><img alt="English" src="{{ asset('img/flags/FA.png') }}"></span><span class="currency">تومان</span></div>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="#"><img src="{{ asset('img/flags/GB.png') }}" alt="Deutsch">English</a>
 			<a class="dropdown-item" href="#"><img src="{{ asset('img/flags/FR.png') }}" alt="Français">Français</a>
 			<a class="dropdown-item" href="#"><img src="{{ asset('img/flags/IT.png') }}" alt="Italiano">Italiano</a>
-          </div>
-        </div>
-      </div>
-  </div>
+		  </div>
+		</div>
+	</div>
+</div>

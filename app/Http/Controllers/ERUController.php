@@ -136,21 +136,37 @@ class ERUController extends Controller
             $message['class'] = 'alert-warning';
 
             return redirect()->back()->withErrors($validate)->with('message',$message);
+        }
+
+
+        $r = new MeRequest();
+			
+		if(!Auth::check()){
+
+            $r->name = $request->get('name');
+
+            $r->lastname = $request->get('lastname');
+
+            $r->mobile = $request->get('mobile');
+
+
+        }
+        else{
+
+            $r->name = Auth::user()->name;
+
+            $r->lastname = Auth::user()->lastname;
+
+            $r->mobile = Auth::user()->mobile;
 
 
         }
 
-        $checkexistrequest = MeRequest::select('me_request.id')->where('me_request.mobile','=',$request->get('mobile'))->get()->first();
-
-        if(is_null($checkexistrequest)){			
-		
-        	$r = new MeRequest();
-            
-        	$r->name = $request->get('name');
-
-        	$r->lastname = $request->get('lastname');
-
-        	$r->mobile = $request->get('mobile');
+        $checkregisterlicense = MeRequest::select('me_request.id')
+            ->where('me_request.mobile','=',$r->mobile)
+            ->where('me_request.status','=','pending')
+            ->count();
+        if($checkregisterlicense <= 3){
 
         	$r->typerequest = $request->get('typerequest');
 
@@ -205,6 +221,8 @@ class ERUController extends Controller
                             
                         $user->password = Hash::make('PA'.'EI'.$r->id);
 
+                        $user->points = 150;
+
                         $user->save();
 
                     }
@@ -213,6 +231,14 @@ class ERUController extends Controller
                 else{
 
                     $user = Auth::user();
+
+                    $points = Auth::user()->points; 
+
+                    $points = $points + 15;;
+
+                    $user->points = $points;
+
+                    $user->save();
 
                 }
 
@@ -224,14 +250,23 @@ class ERUController extends Controller
                 
                 $pa = 'PA'.'EI'.$r->id;
 
-                Smsirlaravel::send(['مشترک عزیز با سلام'.'،'.'درخواست شما با موفقیت ثبت گردید'.'نام کاربری :'.$r->mobile.'و رمز عبور شما :'.$pa.'شما می توانید با ورود به حساب کاربری خود از وضعیت درخواست خود مطلع شوید','درخواست جدیدی در سامانه ثبت شد.'],[$user->mobile,'09120924699']);
 
-                Smsirlaravel::send([$r->name.' '.$r->lastname.' '.'عزیز'.'به باشگاه مشتریان امداد آی تی خوش آمدید جهت استفاده از امکانت و تخفیفات ویژه به حساب کاربری خود در وب سایت ما مراجعه کنید'.'http://emdadit.com'],[$user->mobile]);
-				
+                if(!Auth::check()){
+                	Smsirlaravel::send(['مشترک عزیز با سلام'.'،'.'درخواست شما با موفقیت ثبت گردید'.'نام کاربری :'.$r->mobile.'و رمز عبور شما :'.$pa.'شما می توانید با ورود به حساب کاربری خود از وضعیت درخواست خود مطلع شوید','درخواست جدیدی در سامانه ثبت شد.'],[$user->mobile,'09120924699']);
+
+                	Smsirlaravel::send([$r->name.' '.$r->lastname.' '.'عزیز'.'به باشگاه مشتریان امداد آی تی خوش آمدید جهت استفاده از امکانات و تخفیفات ویژه به حساب کاربری خود در وب سایت ما مراجعه کنید'.'http://emdadit.com'],[$user->mobile]);
+    			}
+    			else{
+    				
+    				Smsirlaravel::send([$r->name.' '.$r->lastname.' '.'عزیز درخواست شما با موفقیت در سامانه ثبت گردید'],[$user->mobile,'09120924699']);
+    				
+    			}
     			
                 $messagesuccessrequest['message'] = 'ثبت اطلاعات شما با موفقیت انجام شد این اطمینان به شما داده میشود که کارشناسان ما با شما در کمترین ممکن زمان تماس بگیرند .';
 
                 $messagesuccessrequest['class'] = 'alert-success';
+
+                $submitstatus['class'] = 'alert-success';
 
                 $validates = $validate->errors();
     			
@@ -248,22 +283,24 @@ class ERUController extends Controller
         				
         			'mobile' => $r->mobile,
 
-                    'password' => $pa
+                    'password' => $pa,
+
+                    'submitstatus' => $submitstatus
 
                 ]);
 
-
             }
-
         }
         else{
 
-            $message['message'] = 'مشترک عزیز شما قبلا با همین شماره درخواست داده اید لطفا جهت بررسی وضعیت در خواست خود به پنل مدیریتی خود مراجعه فرمایید .';
+            $error['class'] = 'errorregisterlicense';
 
-            $message['class'] = 'alert-warning';
+            return redirect()->back()->with([
 
-            return redirect()->back()->with('message',$message);
+                'error' => $error
+            ]);
 
         }
+
     }
 }

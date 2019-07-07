@@ -67,7 +67,7 @@
               </div>
               <div class="d-flex flex-wrap justify-content-between padding-bottom-1x">
                 <label class="custom-control custom-checkbox">
-                  <input class="custom-control-input" type="checkbox" checked><span class="custom-control-indicator"></span><span class="custom-control-description">مرا بخاطر بسپار</span>
+                  <input class="custom-control-input" type="checkbox" name="rememberme" checked><span class="custom-control-indicator"></span><span class="custom-control-description">مرا بخاطر بسپار</span>
                 </label><a class="navi-link" href="account-password-recovery.html">فراموشی رمز عبور ؟</a>
               </div>
               <div class="text-center text-sm-right">

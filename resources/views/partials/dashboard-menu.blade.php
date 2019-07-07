@@ -12,13 +12,19 @@
       </div>
     </aside>
     <nav class="list-group text-right">
-    <a class="list-group-item with-badge @if($activeMenuDashboard == 'myrequest')active @endif" href="{{route('show_my_request')}}">
-      <i class="icon-bag"></i> سفارشات من<span class="badge badge-primary badge-pill">{{$countrequests}}</span></a>
-    <a class="list-group-item @if($activeMenuDashboard == 'myprofile')active @endif" href="{{route('dashboard_users')}}"><i class="icon-head"></i> پروفایل کاربری
-      <span class="badge badge-primary badge-pill" style="float:left;">{{$countrequests}}</span>
-    </a>
-    <a class="list-group-item @if($activeMenuDashboard == 'myaddress')active @endif" href="{{route('show_my_address')}}"><i class="icon-map"></i> آدرسهای من
-      <span class="badge badge-primary badge-pill" style="float:left;">{{$countrequests}}</span>
-    </a>
+      <a class="list-group-item with-badge" href="#">
+        <i class="icon-bag"></i> سفارشات من
+        <span class="badge badge-primary badge-pill"></span>
+      </a>
+      <a class="list-group-item with-badge @if($activeMenuDashboard == 'myrequest')active @endif" href="{{route('show_my_request')}}">
+        <i class="icon-outbox"></i> درخواست های من
+        <span class="badge badge-primary badge-pill">{{$countrequests}}</span>
+      </a>
+      <a class="list-group-item @if($activeMenuDashboard == 'myprofile')active @endif" href="{{route('dashboard_users')}}">
+        <i class="icon-head"></i> پروفایل کاربری
+      </a>
+      <a class="list-group-item @if($activeMenuDashboard == 'myaddress')active @endif" href="{{route('show_my_address')}}">
+        <i class="icon-map"></i> آدرسهای من
+      </a>
   </nav>
 </div>

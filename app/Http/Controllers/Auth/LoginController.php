@@ -26,7 +26,15 @@ class LoginController extends Controller
 
         $pass = $request->get('password');
 
-        if(!Auth::attempt(['mobile' => $username, 'password' => $pass])) {
+        $remember_me = $request->get('rememberme');
+
+        if(!is_null($remember_me)){
+
+            $remember_me = true;
+        }
+
+
+        if(!Auth::attempt(['mobile' => $username, 'password' => $pass], $remember_me)) {
             
             Session::flash('login_faild','نام کاربری یا رمزعبور اشتباه می باشد!');
 

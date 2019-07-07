@@ -80,7 +80,17 @@ class MainDashboardController extends Controller
 
         $date = \Morilog\Jalali\Jalalian::forge('now')->format('%d %B، %Y');
 
-        $requests = MeRequest::where('userid','=',Auth::user()->id)->get();
+        $requests = MeRequest::where('userid','=',Auth::user()->id)->paginate(25);
+
+        $now = \Carbon\Carbon::now();
+
+        $result = [];
+
+        for($i = 1;$i<=3;$i++){
+
+            $result[] = \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::now()->addDays($i))->format("%Y-%m-%d");
+
+        }
 
         return view('/auth/dashboard/myrequest')->with([
 
@@ -89,6 +99,8 @@ class MainDashboardController extends Controller
             'activeMenuDashboard' => $activeMenuDashboard,
 
             'datenow' => $date,
+
+            'dates' => $result,
 
             'statuses' => $this->statuses,
 
