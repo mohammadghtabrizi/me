@@ -62,11 +62,11 @@
                                     	        </td>
                                     	        <td>
                                                     @if($expertrequest->status == 0)
-                                                        <a href="{{route('expert_request_send',['id' => $expertrequest->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد پست"><i class="zmdi zmdi-mail-send"></i></a>
+                                                        <a href="{{route('expert_request_send',['id' => $expertrequest->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="ارسال کارشناس "><i class="zmdi zmdi-mail-send"></i></a>
                                                         <a href="{{route('expert_request_delete',['id' => $expertrequest->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
                                                     @endif
                                                     @if($expertrequest->status == 1)
-                                                        <a href="{{route('expert_request_finish_job',['id' => $expertrequest->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد پست"><i class="zmdi zmdi-check"></i></a>
+                                                        <a href="{{route('expert_request_finish_job',['id' => $expertrequest->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="اتمام کار"><i class="zmdi zmdi-check"></i></a>
                                                         <a href="{{route('expert_request_delete',['id' => $expertrequest->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
                                                     @endif
                                                     @if($expertrequest->status == 2)
