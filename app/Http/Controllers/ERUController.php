@@ -178,7 +178,7 @@ class ERUController extends Controller
 
             $r->address = $request->get('address');  
 
-            $r->status = 'pending';
+            $r->status = 0;
 
             $now = \Carbon\Carbon::now();
 

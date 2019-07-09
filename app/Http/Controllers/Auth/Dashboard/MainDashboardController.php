@@ -22,7 +22,7 @@ class MainDashboardController extends Controller
 
     protected $statuses = [
 
-        'pending' => [
+        '0' => [
 
             'color' => 'text-warning',
 
@@ -30,7 +30,7 @@ class MainDashboardController extends Controller
 
         ],
 
-        'sending' => [
+        '1' => [
 
             'color' => 'text-info',
 
@@ -38,7 +38,7 @@ class MainDashboardController extends Controller
 
         ],
 
-        'completed' => [
+        '2' => [
 
             'color' => 'text-success',
 
@@ -80,7 +80,9 @@ class MainDashboardController extends Controller
 
         $date = \Morilog\Jalali\Jalalian::forge('now')->format('%d %B، %Y');
 
-        $requests = MeRequest::where('userid','=',Auth::user()->id)->paginate(25);
+        $requests = MeRequest::where('userid','=',Auth::user()->id)
+            ->where('status','<=','2')
+            ->paginate(25);
 
         $now = \Carbon\Carbon::now();
 

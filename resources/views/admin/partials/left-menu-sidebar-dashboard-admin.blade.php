@@ -15,6 +15,11 @@
                 </div>
             </li>
             <li class="active open"><a href="{{route('admin_dashboard')}}"><i class="zmdi zmdi-home"></i><span>داشبورد</span></a></li>
+            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-receipt"></i><span>درخواست کارشناس</span></a>
+                <ul class="ml-menu">
+                    <li><a href="{{route('admin_expert_request_index')}}">لیست درخواست ها</a></li>
+                </ul>
+            </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>وبلاگ</span></a>
                 <ul class="ml-menu">
                     <li><a href="{{route('admin_blog_index')}}">پست وبلاگ</a></li>

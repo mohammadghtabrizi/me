@@ -32,6 +32,27 @@ Route::group(['prefix' => 'admin'],function(){
 
 
 
+		/*Expert Request*/
+
+		Route::group(['prefix' => 'expertrequest'],function(){
+
+			Route::get('/','admin\expertrequest\ExpertRequestController@index')->name('admin_expert_request_index');
+
+			Route::get('/expert_send/{id}','admin\expertrequest\ExpertRequestController@expertsend')->name('expert_request_send');
+
+			Route::get('/expert_delete/{id}','admin\expertrequest\ExpertRequestController@expertdelete')->name('expert_request_delete');
+
+			Route::get('/expert_finish_job/{id}','admin\expertrequest\ExpertRequestController@expertfinishjob')->name('expert_request_finish_job');
+
+			
+
+
+		});
+
+		/*Expert Request*/
+
+
+
 		/*Admin Blog Section*/
 
 		Route::group(['prefix' => 'blog'],function(){
@@ -67,6 +88,7 @@ Route::group(['prefix' => 'admin'],function(){
 			Route::post('/edit_post_act/{id}','admin\blog\AdminBlogMainController@editpostact')->name('edit_post_act');
 
 			Route::get('/delete_post_picture/{id}','admin\blog\AdminBlogMainController@deletepostpicture')->name('delete_post_picture');
+
 			Route::get('/admin_tags_blog_index','admin\blog\AdminBlogMainController@indextags')->name('admin_tags_blog_index');
 
 			Route::get('/add_tag_post','admin\blog\AdminBlogMainController@addtag')->name('add_tag_post');
