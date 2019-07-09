@@ -53,6 +53,8 @@ class ExpertRequestController extends Controller
 
     		'citys' => $this->citys,
 
+            'services' => $this->services,
+
     		
 
     	]);
@@ -91,4 +93,6 @@ class ExpertRequestController extends Controller
     	return redirect()->back();
 
     }
+
+
 }
