@@ -5,8 +5,20 @@
         <title>مرکز فوق تخصصی فروش و تعمیرات ماشین های اداری ، کامپیوتر و لپ تاپ امداد آی تی |امداد IT</title>
 
         <!-- SEO Meta Tags-->
-        <meta name="description" content="مرکز فوق تخصصی تعمیرات و فروش انواع پرینتر اسکنر کپی فکس و لپ تاپ و کامپیوتر و سامانه هوشمند درخواست کارشناس">
-        <meta name="keywords" content="سامانه درخواست کارشناس,تعمیر پرینتر,شارژ کارتریج,فروش,قطعات ماشینهای اداری,تعمیر لپ تاپ,تعمیرکامپیوتر,آموزش,دانلود درایور,تعمیر فکس,تعمیر کپی,سامانه ارسال کارشناس در محل">
+            
+        @if (isset($blogpost))
+
+            @foreach($blogpost as $blog)
+                <meta name="description" content="{{$blog->BP_METATAG_DESCRIPTION}}">
+                <meta name="keywords" content="{{$blog->BP_METATAG_DESCRIPTION}}">
+            @endforeach
+
+        @else
+            <meta name="description" content="مرکز فوق تخصصی تعمیرات و فروش انواع پرینتر اسکنر کپی فکس و لپ تاپ و کامپیوتر و سامانه هوشمند درخواست کارشناس">
+            <meta name="keywords" content="سامانه درخواست کارشناس,تعمیر پرینتر,شارژ کارتریج,فروش,قطعات ماشینهای اداری,تعمیر لپ تاپ,تعمیرکامپیوتر,آموزش,دانلود درایور,تعمیر فکس,تعمیر کپی,سامانه ارسال کارشناس در محل">
+        @endif
+
+        
         <meta name="author" content="Emdadit">
         <!-- Mobile Specific Meta Tag-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
