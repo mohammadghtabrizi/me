@@ -47,6 +47,8 @@
         <link rel="stylesheet" href="{{asset('css/fancy-slider/style.css')}}">
         <link rel="stylesheet" href="{{asset('css/pageloading.css')}}">
 
+        <script src="{{asset('js/modernizr.min.js')}}"></script>
+
     </head>
     <!-- Body-->
     <body>    

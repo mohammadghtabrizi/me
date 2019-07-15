@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2019 at 07:00 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Jul 15, 2019 at 10:46 PM
+-- Server version: 10.1.39-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -210,7 +210,7 @@ INSERT INTO `blog_post` (`id`, `BP_TITLE`, `BP_DESS`, `BP_DESL`, `BP_USERID`, `B
 (4, 'مطلب 4', 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. ک', 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\r\n\r\nلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\r\n\r\nلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.', 17, 6, 1, 37, 2, NULL, NULL, NULL, '2019-01-16 00:00:00', '2019-06-07 18:39:06'),
 (5, 'مطلب 5', 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. ک', 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\r\n\r\nلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\r\n\r\nلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.', 17, 1, 0, 50, 1, NULL, NULL, NULL, '2019-01-16 00:00:00', '2019-06-12 16:01:04'),
 (10, 'نمونه 4', 'نمونه 5', '<p>tنمونه 6hftyftytfyftf</p>', 17, 4, 0, 11, 1, 'نمونه1tfyftyf', 'نمونه2tyftyfty', 'نمونه3tyftyf', '2019-06-11 23:44:35', '2019-06-12 15:06:13'),
-(11, 'متن پرینتر4', 'متن پرینتر5', '<p>yjytujtyyuمتن پرینتر6متن پرینتر6متن پرینتر6متن پرینتر6متن پرین<span style=\"background-color: rgb(255, 255, 0);\">تر6متن پرینتر6متن پرینتر6متن پرینتر6متن پرینتر6متن پرینتر6</span><br></p>', 17, 6, 0, 2, 1, 'متن پرینتر1', 'متن پرینتر2thrhrdrt', 'متن پرینتر3dfghfdfg', '2019-06-12 18:41:32', '2019-06-12 16:05:17');
+(11, 'متن پرینتر4', 'متن پرینتر5', '<p>yjytujtyyuمتن پرینتر6متن پرینتر6متن پرینتر6متن پرینتر6متن پرین<span style=\"background-color: rgb(255, 255, 0);\">تر6متن پرینتر6متن پرینتر6متن پرینتر6متن پرینتر6متن پرینتر6</span><br></p>', 17, 6, 0, 6, 1, 'متن پرینتر1', 'متن پرینتر2thrhrdrt', 'متن پرینتر3dfghfdfg', '2019-06-12 18:41:32', '2019-07-07 19:23:07');
 
 -- --------------------------------------------------------
 
@@ -299,7 +299,7 @@ CREATE TABLE `me_request` (
   `timerequest` varchar(255) DEFAULT NULL,
   `address` text,
   `requestid` varchar(50) DEFAULT NULL,
-  `status` varchar(20) NOT NULL DEFAULT 'pending',
+  `status` int(20) NOT NULL DEFAULT '0',
   `userid` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -310,16 +310,8 @@ CREATE TABLE `me_request` (
 --
 
 INSERT INTO `me_request` (`id`, `name`, `lastname`, `mobile`, `typerequest`, `city`, `daterequest`, `timerequest`, `address`, `requestid`, `status`, `userid`, `created_at`, `updated_at`) VALUES
-(119, 'سعید', 'اکرمی', '09141083645', '2', '2', '1397-12-25 16:21:40', '2', NULL, 'RQE01119', '1', 0, '2019-03-15 12:51:40', '2019-03-15 12:51:40'),
-(121, 'محمد', 'تبریزی', '09120332533', '1', '1', '1397-12-26 20:29:14', '1', NULL, 'RQE01121', 'pending', 17, '2019-03-16 16:59:14', '2019-03-16 16:59:14'),
-(122, 'محمد', 'تبریزی', '09120332533', '1', '1', '1397-12-26 20:29:14', '1', NULL, 'RQE01121', 'pending', 17, '2019-03-16 16:59:14', '2019-03-16 16:59:14'),
-(123, 'محمد', 'تبریزی', '09121234123', '1', '1', '1397-12-27 20:35:23', '1', NULL, 'RQE01123', 'pending', 18, '2019-03-16 17:05:23', '2019-03-16 17:05:23'),
-(124, 'محمد', 'تبریزی', '09121234123', '1', '1', '1397-12-27 20:35:23', '1', NULL, 'RQE01123', 'pending', 18, '2019-03-16 17:05:23', '2019-03-16 17:05:23'),
-(127, 'مرتضی', 'علیپور', '09148983292', '1', '1', '1398-01-09 15:37:05', '1', NULL, 'RQE01127', 'pending', 20, '2019-03-28 11:07:05', '2019-03-28 11:07:05'),
-(138, 'محمد', 'تبریزی', '09120924699', '1', '2', '1398-01-12 21:12:26', '1', NULL, 'RQE01138', 'pending', 21, '2019-03-31 16:42:26', '2019-03-31 16:42:26'),
-(139, 'حسن', 'همتی تیرآبادی', '09146660041', '3', '2', '1398-01-12 21:17:49', '1', NULL, 'RQE01139', 'pending', 22, '2019-03-31 16:47:49', '2019-03-31 16:47:49'),
-(140, 'یوسف', 'شهیدی', '09123196578', '2', '2', '1398-01-13 14:08:22', '1', 'پاساژ سبلان', 'RQE01140', 'pending', 23, '2019-04-01 09:38:22', '2019-04-01 09:38:22'),
-(141, 'مرتضی', 'علیپور', '09374035603', '1', '1', '1398-01-30 15:34:53', '1', NULL, 'RQE01141', 'pending', 16, '2019-04-18 11:04:53', '2019-04-18 11:04:53');
+(142, 'محمد', 'تبریزی', '09120924699', '1', '1', '1398-04-18 22:33:48', '1', NULL, 'RQE01142', 1, 24, '2019-07-07 18:03:48', '2019-07-09 18:18:58'),
+(143, 'محمد', 'تبریزی', '09120924699', '1', '1', '1398-04-17 22:35:37', '1', NULL, 'RQE01143', 1, 24, '2019-07-07 18:05:37', '2019-07-09 18:19:01');
 
 -- --------------------------------------------------------
 
@@ -377,6 +369,97 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `pro_brands_id` int(11) NOT NULL,
+  `pro_name` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `pro_detail` text COLLATE utf8_persian_ci NOT NULL,
+  `pro_points` int(11) NOT NULL,
+  `pro_price` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `pro_status` int(11) NOT NULL DEFAULT '0',
+  `pro_review` longtext COLLATE utf8_persian_ci,
+  `pro_categoryid` int(11) NOT NULL,
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_brands`
+--
+
+CREATE TABLE `product_brands` (
+  `id` int(11) NOT NULL,
+  `pro_brands_name` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `pro_brands_images_source` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_category`
+--
+
+CREATE TABLE `product_category` (
+  `id` int(11) NOT NULL,
+  `pro_topcat1_id` int(11) DEFAULT NULL,
+  `pro_topcat2_id` int(11) DEFAULT NULL,
+  `pro_cat_name` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `pro_cat_detial` text COLLATE utf8_persian_ci,
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_images`
+--
+
+CREATE TABLE `product_images` (
+  `id` int(11) NOT NULL,
+  `pro_images_product_id` int(11) NOT NULL,
+  `pro_image_source` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_property`
+--
+
+CREATE TABLE `product_property` (
+  `id` int(11) NOT NULL,
+  `pro_per_name` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_property_category`
+--
+
+CREATE TABLE `product_property_category` (
+  `id` int(11) NOT NULL,
+  `pro_per_id` int(11) NOT NULL,
+  `pro_cat_id` int(11) NOT NULL,
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `smsirlaravel_logs`
 --
 
@@ -425,7 +508,12 @@ INSERT INTO `smsirlaravel_logs` (`id`, `from`, `to`, `message`, `status`, `respo
 (27, '30004747470459', '09123196578', 'یوسف شهیدی عزیزبه باشگاه مشتریان امداد آی تی خوش آمدید جهت استفاده از امکانت و تخفیفات ویژه به حساب کاربری خود در وب سایت ما مراجعه کنیدhttp://emdadit.com', 1, 'ارسال با موفقیت انجام گردید', '2019-04-01 09:38:31', '2019-04-01 09:38:31'),
 (28, '30004747470459', '09374035603', 'مشترک عزیز با سلام،درخواست شما با موفقیت ثبت گردیدنام کاربری :09374035603و رمز عبور شما :PAEI141شما می توانید با ورود به حساب کاربری خود از وضعیت درخواست خود مطلع شوید', 0, 'را در هدر درخواست ارسال کنید x-sms-ir-secure-token ', '2019-04-18 11:04:58', '2019-04-18 11:04:58'),
 (29, '30004747470459', '09120924699', 'درخواست جدیدی در سامانه ثبت شد.', 0, 'را در هدر درخواست ارسال کنید x-sms-ir-secure-token ', '2019-04-18 11:04:58', '2019-04-18 11:04:58'),
-(30, '30004747470459', '09374035603', 'مرتضی علیپور عزیزبه باشگاه مشتریان امداد آی تی خوش آمدید جهت استفاده از امکانت و تخفیفات ویژه به حساب کاربری خود در وب سایت ما مراجعه کنیدhttp://emdadit.com', 0, 'را در هدر درخواست ارسال کنید x-sms-ir-secure-token ', '2019-04-18 11:04:59', '2019-04-18 11:04:59');
+(30, '30004747470459', '09374035603', 'مرتضی علیپور عزیزبه باشگاه مشتریان امداد آی تی خوش آمدید جهت استفاده از امکانت و تخفیفات ویژه به حساب کاربری خود در وب سایت ما مراجعه کنیدhttp://emdadit.com', 0, 'را در هدر درخواست ارسال کنید x-sms-ir-secure-token ', '2019-04-18 11:04:59', '2019-04-18 11:04:59'),
+(31, '30004747470459', '09120924699', 'مشترک عزیز با سلام،درخواست شما با موفقیت ثبت گردیدنام کاربری :09120924699و رمز عبور شما :PAEI142شما می توانید با ورود به حساب کاربری خود از وضعیت درخواست خود مطلع شوید', 1, 'ارسال با موفقیت انجام گردید', '2019-07-07 18:03:55', '2019-07-07 18:03:55'),
+(32, '30004747470459', '09120924699', 'درخواست جدیدی در سامانه ثبت شد.', 1, 'ارسال با موفقیت انجام گردید', '2019-07-07 18:03:55', '2019-07-07 18:03:55'),
+(33, '30004747470459', '09120924699', 'محمد تبریزی عزیزبه باشگاه مشتریان امداد آی تی خوش آمدید جهت استفاده از امکانات و تخفیفات ویژه به حساب کاربری خود در وب سایت ما مراجعه کنیدhttp://emdadit.com', 1, 'ارسال با موفقیت انجام گردید', '2019-07-07 18:04:01', '2019-07-07 18:04:01'),
+(34, '30004747470459', '09120924699', 'محمد تبریزی عزیز درخواست شما با موفقیت در سامانه ثبت گردید', 1, 'ارسال با موفقیت انجام گردید', '2019-07-07 18:05:43', '2019-07-07 18:05:43'),
+(35, '30004747470459', '09120924699', 'محمد تبریزی عزیز درخواست شما با موفقیت در سامانه ثبت گردید', 1, 'ارسال با موفقیت انجام گردید', '2019-07-07 18:05:43', '2019-07-07 18:05:43');
 
 -- --------------------------------------------------------
 
@@ -459,16 +547,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `lastname`, `password`, `email`, `mobile`, `points`, `newsletters`, `nameplace`, `state`, `city`, `postalcode`, `address1`, `address2`, `CREATED_AT`, `remember_token`, `UPDATED_AT`, `userpicture`) VALUES
-(14, 'محمد', 'تبریزی', '$2y$10$6NwEuvSCNiyuhAuC3bwmlOIOxWJecW2ih4MufxzfCyeBf71w42OO.', 'ms@gmail.com', '09120924690', 0, 1, '', '', '', '', '', '', '2019-03-31 16:27:52', NULL, '2019-03-15 09:38:12', 'def.png'),
-(15, 'سعید', 'اکرمی', '$2y$10$aZyM45jaJ9Sjup4I9y50huCBBARU6PwpMgAuzffKJ.G3hfEWYt002', NULL, '09141083645', NULL, 1, '', '', '', '', '', '', '2019-03-15 12:51:40', NULL, '2019-03-15 12:51:40', 'def.png'),
-(16, 'محمد', 'تبریزی', '$2y$10$bquGqrgc.MjQwqiXyh4v3uUITSPZu1RcN4gdfd6MWkA7uflhaYThK', NULL, '09374035603', NULL, 1, '', '', '', '', '', '', '2019-03-16 16:24:01', NULL, '2019-03-16 16:24:01', 'def.png'),
 (17, 'محمد', 'تبریزی', '$2y$10$ZRwr07V4Ed7vJHcXfd13uOmk/Eabl3YAC3V1w1IqtuL9NfhWF2Gw2', NULL, '09120332533', 0, 1, '', '', '', '', '', '', '2019-03-16 16:58:19', NULL, '2019-03-16 16:58:19', 'def.png'),
-(18, 'حسن', 'همتی تیرآبادی', '$2y$10$iD63jsZDFJtXGCR1FhheB.rGzTAdybqs9RxDASf4Aleyj2GplPZai', 'm@gmail.com', '09121234123', 0, 0, 'تحلیل', 'آذربایجان شرقی', 'تبریزی', '1234567890', 'خیابان امام خمینی پاشاز', NULL, '2019-03-27 14:25:21', '05kT7ffyMEc6ROSfiNyBICZE3qCyPba6iQd0soD0Hlk6j6Li7npO0Ev3UmyZ', '2019-03-25 10:32:52', 'def.png'),
-(19, 'علی sdsa', 'تبریزی', '$2y$10$i0K5hJBY769Eiglz4KAW..9el6kj6RuzEzANgZc64Yj1ghPQUd2z.', 'mohammad@gmail.com', '09120924698', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2019-06-12 14:41:03', 'rydUmKijIT06uXfGUrnrdekgFgM8TaBlz6xmB6E3y8rysRIPGOjUBoSsHfWD', '2019-06-12 14:41:03', 'def.png'),
-(20, 'مرتضی', 'علیپور', '$2y$10$S7OPGmfoPBDeqkkd6KROde6kuWUGvU.DnTsOXWTflFNti.PDCNevW', NULL, '09148983292', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-28 15:32:30', '6qku6WCHfenq3jKKpZIPIFTgL6jJX2qtmJHrIdHd0KuihU2LgfxR7gjA8uVo', '2019-03-28 15:32:30', 'def.png'),
-(21, 'محمد', 'تبریزی', '$2y$10$N4SvXi/e/SHGYQys8sSVb.tnvp8v6QgvZrgUIKZ7WKt9yB0HaxOmi', 'mohammad.gh.tabrizi@gmail.com', '09120924699', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-31 16:44:29', 'VIF2piRGUo0VZ9VYy7Lb5DubcbTt7zN57vdoqc2LdTfiYgpY1ZwpwVYGX1v3', '2019-03-31 16:28:59', 'def.png'),
-(22, 'حسن', 'همتی تیرآبادی', '$2y$10$75ck1GZc/480416kyh7AduG3d95qRuahRdYgODCi2hKPWtNnxq5By', NULL, '09146660041', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-31 16:47:49', NULL, '2019-03-31 16:47:49', 'def.png'),
-(23, 'یوسف', 'شهیدی', '$2y$10$B4T0fvogwa0M9kjnu2CD2OqTg3bSToDJ39EXgeFk54GXH//xxti.K', NULL, '09123196578', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2019-04-01 13:18:49', 'PqJiKH3nVBYVaptccODHQgFxjjWKhv0GKq5BgMgsBeMJgNeiGU2dkVFQyevM', '2019-04-01 09:38:22', 'def.png');
+(24, 'محمد', 'تبریزی', '$2y$10$582KFF6HOCNfYD/hM0sqqeSLLwc3QgcMtBulX1wthymFI8nroAXzy', NULL, '09120924699', 165, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2019-07-07 18:05:37', 'gxiUJmZTMvGPeU2Umr8jvsDcMChOVRUl9Zw9tT2yXAJ8uRo56dIBLS14Nirf', '2019-07-07 18:05:37', 'def.png');
 
 --
 -- Indexes for dumped tables
@@ -559,6 +639,45 @@ ALTER TABLE `password_resets`
   ADD KEY `email` (`email`);
 
 --
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `pro_name` (`pro_name`);
+
+--
+-- Indexes for table `product_brands`
+--
+ALTER TABLE `product_brands`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `pro_brands_name` (`pro_brands_name`);
+
+--
+-- Indexes for table `product_category`
+--
+ALTER TABLE `product_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_images`
+--
+ALTER TABLE `product_images`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `pro_image_source` (`pro_image_source`);
+
+--
+-- Indexes for table `product_property`
+--
+ALTER TABLE `product_property`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_property_category`
+--
+ALTER TABLE `product_property_category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `smsirlaravel_logs`
 --
 ALTER TABLE `smsirlaravel_logs`
@@ -622,7 +741,7 @@ ALTER TABLE `blog_post_tag`
 -- AUTO_INCREMENT for table `blog_tag`
 --
 ALTER TABLE `blog_tag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `header_title`
@@ -634,7 +753,7 @@ ALTER TABLE `header_title`
 -- AUTO_INCREMENT for table `me_request`
 --
 ALTER TABLE `me_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -655,16 +774,52 @@ ALTER TABLE `password_resets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_brands`
+--
+ALTER TABLE `product_brands`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_category`
+--
+ALTER TABLE `product_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_images`
+--
+ALTER TABLE `product_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_property`
+--
+ALTER TABLE `product_property`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_property_category`
+--
+ALTER TABLE `product_property_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `smsirlaravel_logs`
 --
 ALTER TABLE `smsirlaravel_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

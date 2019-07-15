@@ -147,9 +147,10 @@ Route::post('store_expertrequest','ERUController@addExpert')->name('store_expert
 
 
 
-/*Comments*/
+/*Shop Main*/
+Route::get('shop','main\ShopMainController@index')->name('shop_main');
 
-Route::post('store_comment','blog\users\BlogMainController@addcomment')->name('store_comment');
+
 
 
 
@@ -172,6 +173,10 @@ Route::group(['prefix' => 'blog'],function(){
 	Route::post('/addreplycomment','blog\users\BlogMainController@addreplycomment')->name('add_reply_comment');
 
 });
+
+/*Comments*/
+
+Route::post('store_comment','blog\users\BlogMainController@addcomment')->name('store_comment');
 
 /* Users Dashboard */
 Route::group(['prefix' => 'dashboard'],function(){
