@@ -44,10 +44,6 @@ Route::group(['prefix' => 'admin'],function(){
 
 			Route::get('/expert_finish_job/{id}','admin\expertrequest\ExpertRequestController@expertfinishjob')->name('expert_request_finish_job');
 
-
-			
-
-
 		});
 
 		/*Expert Request*/
@@ -104,6 +100,17 @@ Route::group(['prefix' => 'admin'],function(){
 		});
 
 		/*Admin Blog Section*/
+
+
+		/*Admin Shop Section*/
+		Route::group(['prefix' => 'shop'],function(){
+
+			Route::get('/product_list','admin\shop\ShopAdminMainController@productlist')->name('product_list_show');
+
+
+		});
+
+		/*Admin Shop Section*/
 		
 		
 	});

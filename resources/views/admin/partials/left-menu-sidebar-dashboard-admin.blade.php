@@ -27,20 +27,19 @@
                     <li><a href="{{route('admin_tags_blog_index')}}">تگ ها</a></li>
                 </ul>
             </li>
+            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-shopping-cart"></i><span>تجارت الکترونیک</span></a>
+                <ul class="ml-menu">
+                    <li><a href="#">داشبورد</a></li>
+                    <li><a href="{{route('product_list_show')}}">لیست محصول</a></li>
+                    <li><a href="ec-product-detail.html">جزئیات محصول</a></li>
+                </ul>
+            </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-folder"></i><span>مدیریت فایل</span></a>
                 <ul class="ml-menu">
                     <li><a href="file-dashboard.html">همه فایل ها</a></li>
                     <li><a href="file-documents.html">اسناد</a></li>
                     <li><a href="file-images.html">تصاویر</a></li>
                     <li><a href="file-media.html">رسانه</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-shopping-cart"></i><span>تجارت الکترونیک</span></a>
-                <ul class="ml-menu">
-                    <li><a href="ec-dashboard.html">داشبورد</a></li>
-                    <li><a href="ec-product.html">محصول</a></li>
-                    <li><a href="ec-product-List.html">لیست محصول</a></li>
-                    <li><a href="ec-product-detail.html">جزئیات محصول</a></li>
                 </ul>
             </li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-hc-fw"></i><span>مدیریت کاربران</span></a>
