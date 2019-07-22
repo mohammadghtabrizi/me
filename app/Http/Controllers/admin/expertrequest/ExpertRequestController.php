@@ -44,6 +44,10 @@ class ExpertRequestController extends Controller
     	$expertrequests = MeRequest::select('me_request.*')
     		->paginate(50);
 
+        $activemenu = 'requestcategory';
+
+        $activesubmenu = 'requestpage';
+
 
     	return view('admin/expertrequest/expert-request-dashboard')->with([
 
@@ -54,6 +58,10 @@ class ExpertRequestController extends Controller
     		'citys' => $this->citys,
 
             'services' => $this->services,
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
 
     		
 

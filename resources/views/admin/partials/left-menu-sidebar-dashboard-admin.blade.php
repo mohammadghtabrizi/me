@@ -14,32 +14,22 @@
                     </div>
                 </div>
             </li>
-            <li class="active open"><a href="{{route('admin_dashboard')}}"><i class="zmdi zmdi-home"></i><span>داشبورد</span></a></li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-receipt"></i><span>درخواست کارشناس</span></a>
+            <li class="@if($activemenu == 'dashboard')active open @endif"><a href="{{route('admin_dashboard')}}"><i class="zmdi zmdi-home"></i><span>داشبورد</span></a></li>
+            <li class="@if($activemenu == 'requestcategory')active open @endif"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-receipt"></i><span>درخواست کارشناس</span></a>
                 <ul class="ml-menu">
-                    <li><a href="{{route('admin_expert_request_index')}}">لیست درخواست ها</a></li>
+                    <li class="@if($activesubmenu == 'requestpage')active @endif"><a href="{{route('admin_expert_request_index')}}">لیست درخواست ها</a></li>
                 </ul>
             </li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>وبلاگ</span></a>
+            <li class="@if($activemenu == 'blogcategory')active open @endif"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>وبلاگ</span></a>
                 <ul class="ml-menu">
-                    <li><a href="{{route('admin_blog_index')}}">پست وبلاگ</a></li>
-                    <li><a href="{{route('admin_categorys_blog_index')}}">دسته بندی ها</a></li>
-                    <li><a href="{{route('admin_tags_blog_index')}}">تگ ها</a></li>
+                    <li class="@if($activesubmenu == 'blogpost')active @endif"><a href="{{route('admin_blog_index')}}">پست وبلاگ</a></li>
+                    <li class="@if($activesubmenu == 'blogcategory')active @endif"><a href="{{route('admin_categorys_blog_index')}}">دسته بندی ها</a></li>
+                    <li class="@if($activesubmenu == 'blogtag')active @endif"><a href="{{route('admin_tags_blog_index')}}">تگ ها</a></li>
                 </ul>
             </li>
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-shopping-cart"></i><span>تجارت الکترونیک</span></a>
+            <li class="@if($activemenu == 'shopcategory')active open @endif"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-shopping-cart"></i><span>تجارت الکترونیک</span></a>
                 <ul class="ml-menu">
-                    <li><a href="#">داشبورد</a></li>
-                    <li><a href="{{route('product_list_show')}}">لیست محصول</a></li>
-                    <li><a href="ec-product-detail.html">جزئیات محصول</a></li>
-                </ul>
-            </li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-folder"></i><span>مدیریت فایل</span></a>
-                <ul class="ml-menu">
-                    <li><a href="file-dashboard.html">همه فایل ها</a></li>
-                    <li><a href="file-documents.html">اسناد</a></li>
-                    <li><a href="file-images.html">تصاویر</a></li>
-                    <li><a href="file-media.html">رسانه</a></li>
+                    <li class="@if($activesubmenu == 'productlist')active @endif"><a href="{{route('product_list_show')}}">لیست محصول</a></li>
                 </ul>
             </li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-hc-fw"></i><span>مدیریت کاربران</span></a>

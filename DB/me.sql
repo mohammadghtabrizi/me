@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2019 at 10:46 PM
--- Server version: 10.1.39-MariaDB
--- PHP Version: 7.3.5
+-- Generation Time: Jul 22, 2019 at 06:03 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -381,10 +381,18 @@ CREATE TABLE `product` (
   `pro_price` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   `pro_status` int(11) NOT NULL DEFAULT '0',
   `pro_review` longtext COLLATE utf8_persian_ci,
+  `pro_inventory` int(11) NOT NULL DEFAULT '1',
   `pro_categoryid` int(11) NOT NULL,
   `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `pro_brands_id`, `pro_name`, `pro_detail`, `pro_points`, `pro_price`, `pro_status`, `pro_review`, `pro_inventory`, `pro_categoryid`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(1, 1, 'کارتریج لیزری سیاه و سفید 85A', '', 5, '110000', 1, NULL, 1, 9, '2019-07-22 07:03:27', '2019-07-22 07:03:27');
 
 -- --------------------------------------------------------
 
@@ -400,6 +408,13 @@ CREATE TABLE `product_brands` (
   `UPDATED_AT` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
+--
+-- Dumping data for table `product_brands`
+--
+
+INSERT INTO `product_brands` (`id`, `pro_brands_name`, `pro_brands_images_source`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(1, 'HP', '', '2019-07-22 06:57:53', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -412,9 +427,40 @@ CREATE TABLE `product_category` (
   `pro_topcat2_id` int(11) DEFAULT NULL,
   `pro_cat_name` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   `pro_cat_detial` text COLLATE utf8_persian_ci,
+  `pro_cat_bestcategory` int(1) NOT NULL DEFAULT '0',
+  `pro_cat_status` int(1) NOT NULL DEFAULT '0',
   `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+--
+-- Dumping data for table `product_category`
+--
+
+INSERT INTO `product_category` (`id`, `pro_topcat1_id`, `pro_topcat2_id`, `pro_cat_name`, `pro_cat_detial`, `pro_cat_bestcategory`, `pro_cat_status`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(1, NULL, NULL, 'ماشین های اداری', NULL, 0, 1, '2019-07-16 14:31:04', '2019-07-16 14:31:04'),
+(2, 1, NULL, 'چاپگر', NULL, 1, 1, '2019-07-16 14:33:05', '2019-07-16 14:33:05'),
+(3, 1, NULL, 'موادمصرفی چاپگر', NULL, 1, 1, '2019-07-16 14:33:05', '2019-07-16 14:33:05'),
+(4, 1, NULL, 'اسکنر', NULL, 1, 1, '2019-07-16 14:34:25', '2019-07-16 14:34:25'),
+(5, 1, NULL, 'کپی', NULL, 1, 1, '2019-07-16 14:34:25', '2019-07-16 14:34:25'),
+(6, 1, NULL, 'موادمصرفی کپی', NULL, 1, 1, '2019-07-16 14:41:39', '2019-07-16 14:41:39'),
+(7, 1, 2, 'چاپگر لیزررنگی', NULL, 0, 1, '2019-07-16 14:43:46', '2019-07-16 14:43:46'),
+(8, 1, 2, 'چاپگر لیزری سیاه و سفید', NULL, 0, 1, '2019-07-16 14:43:46', '2019-07-16 14:43:46'),
+(9, 1, 3, 'کارتریج های لیزری سیاه و سفید', NULL, 0, 1, '2019-07-22 07:01:49', '2019-07-22 07:01:49');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_category_images`
+--
+
+CREATE TABLE `product_category_images` (
+  `id` int(11) NOT NULL,
+  `pro_cat_img_idproduct` int(11) NOT NULL,
+  `pro_cat_img_source` varchar(255) NOT NULL,
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -429,6 +475,13 @@ CREATE TABLE `product_images` (
   `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+--
+-- Dumping data for table `product_images`
+--
+
+INSERT INTO `product_images` (`id`, `pro_images_product_id`, `pro_image_source`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(1, 1, 'def.jpg', '2019-07-22 07:47:36', '2019-07-22 07:47:36');
 
 -- --------------------------------------------------------
 
@@ -659,6 +712,12 @@ ALTER TABLE `product_category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_category_images`
+--
+ALTER TABLE `product_category_images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product_images`
 --
 ALTER TABLE `product_images`
@@ -777,25 +836,31 @@ ALTER TABLE `password_resets`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product_brands`
 --
 ALTER TABLE `product_brands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `product_category_images`
+--
+ALTER TABLE `product_category_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product_property`

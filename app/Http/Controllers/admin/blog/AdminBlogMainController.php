@@ -59,6 +59,10 @@ class AdminBlogMainController extends Controller
     		->where('BC_SUBCATEGORYID','=',0)
     		->get();
 
+        $activemenu = 'blogcategory';
+
+        $activesubmenu = 'blogpost';
+
 
     	return view('admin/blog/posts-show')->with([
 
@@ -66,7 +70,11 @@ class AdminBlogMainController extends Controller
 
     		'statuses' => $this->statuses,
 
-    		'blogcategorys' => $blogcategorys
+    		'blogcategorys' => $blogcategorys,
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
     	]);
     }
 
@@ -85,13 +93,21 @@ class AdminBlogMainController extends Controller
     		->where('BC_SUBCATEGORYID','=',0)
     		->get();
 
+        $activemenu = 'blogcategory';
+
+        $activesubmenu = 'blogpost';
+
     	return view('admin/blog/posts-show')->with([
 
     		'blogposts' => $blogposts,
 
     		'statuses' => $this->statuses,
 
-    		'blogcategorys' => $blogcategorys
+    		'blogcategorys' => $blogcategorys,
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
     	]);
     }
 
@@ -138,11 +154,19 @@ class AdminBlogMainController extends Controller
             ->orderBy('blog_category.CREATED_AT','desc')
             ->paginate(25);
 
+        $activemenu = 'blogcategory';
+
+        $activesubmenu = 'blogcategory';
+
         return view('admin/blog/categorys-show')->with([
 
             'statuses' => $this->statuses,
 
-            'categorys' => $categorys
+            'categorys' => $categorys,
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
 
 
         ]);
@@ -206,11 +230,19 @@ class AdminBlogMainController extends Controller
 
         $tags = BlogTag::pluck('BT_VALUE','id')->toArray();
 
+        $activemenu = 'blogcategory';
+
+        $activesubmenu = 'blogpost';
+
         return view('admin/blog/post-add')->with([
 
             'categorys' => $categorys,
 
-            'tags' => $tags
+            'tags' => $tags,
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
 
         ]);
 
@@ -298,13 +330,21 @@ class AdminBlogMainController extends Controller
             ->where('blog_category.BC_SUBCATEGORYID','=',0)
             ->get();
 
+        $activemenu = 'blogcategory';
+
+        $activesubmenu = 'blogpost';
+
         return view('admin\blog\post-edit')->with([
 
             'post' => $post,
 
             'categorys' => $categorys,
 
-            'files' => $files
+            'files' => $files,
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
         ]);
     }
 
@@ -381,16 +421,34 @@ class AdminBlogMainController extends Controller
         $tags = BlogTag::select('blog_tag.*')
             ->paginate(25);
 
+        $activemenu = 'blogcategory';
+
+        $activesubmenu = 'blogtag';
+
         return view('admin/blog/tags-show')->with([
 
-            'tags' => $tags
+            'tags' => $tags,
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
 
         ]);
     }
 
     public function addtag(){
 
-        return view('admin/blog/tag-add');
+        $activemenu = 'blogcategory';
+
+        $activesubmenu = 'blogtag';
+
+        return view('admin/blog/tag-add')->with([
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
+
+        ]);
     }
 
     public function addtagact(Request $request){
