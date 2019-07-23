@@ -39,17 +39,17 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>اضافه کردن محصول</h2>
+                    <h2>ویرایش محصول</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> امداد آی تی</a></li>
                         <li class="breadcrumb-item">فروشگاه</li>
-                        <li class="breadcrumb-item active">اضافه کردن محصول</li>
+                        <li class="breadcrumb-item active">ویرایش محصول</li>
                     </ul>
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">                
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
-                    <a href="{{route('product_list_show')}}" class="btn btn-info btn-icon float-right"><i class="zmdi zmdi-check"></i></a>
+                    <a href="{{route('admin_blog_index')}}" class="btn btn-info btn-icon float-right"><i class="zmdi zmdi-check"></i></a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>اضافه کردن</strong>محصول</h2>
+                        <h2><strong>ویرایش</strong>محصول</h2>
                         <ul class="header-dropdown">
                             <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
@@ -72,38 +72,38 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <form enctype="multipart/form-data" method="POST" action="{{route('add_product_act')}}">
+                        <form enctype="multipart/form-data" method="POST" action="{{route('edit_product_act',['id' => $product->productid])}}">
                         	@csrf
                             <div class="form-group">                                
-                                <input type="text" class="form-control" name="productname" placeholder="نام محصول">
+                                <input type="text" class="form-control" name="productname" value="{{$product->pro_name}}" placeholder="نام محصول">
                             </div>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <textarea rows="4" class="form-control no-resize" name="productdetail" placeholder="لطفا آنچه را که میخواهید تایپ کنید..."></textarea>
+                                    <textarea rows="4" class="form-control no-resize" name="productdetail" placeholder="لطفا آنچه را که میخواهید تایپ کنید...">{{$product->pro_detail}}</textarea>
                                 </div>
                             </div>
                             <label for="post_category">نقد و بررسی</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <textarea class="summernote" name="productreview"></textarea>
+                                    <textarea class="summernote" name="productreview">{{$product->pro_review}}</textarea>
                                 </div>
                             </div>
                             <div class="row clearfix">
                                 <div class="col-sm-3">
                                     <div class="form-group">                                
-                                        <input type="text"  class="form-control" name="productprice" placeholder="قیمت محصول">
+                                        <input type="text"  class="form-control"  value="{{$product->pro_price}}" name="productprice" placeholder="قیمت محصول">
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="form-group">                                
-                                        <input type="text" class="form-control" name="productinventory" placeholder="موجودی انبار">
+                                        <input type="text" class="form-control" value="{{$product->pro_inventory}}" name="productinventory" placeholder="موجودی انبار">
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="form-group">
                                         <div class="form-line">
                                             <select class="form-control show-tick ms select2" name="productcategory" data-placeholder="انتخاب دسته بندی">
-                                                <option></option>
+                                                <option value="{{$product->categoryid}}">{{$product->pro_cat_name}}</option>
                                                 @foreach($categorys1 as $category1)
                                                     <optgroup label="{{$category1->pro_cat_name}}">
                                                     @foreach($categorys2 as $category2)
@@ -121,7 +121,7 @@
                                     <div class="form-group">
                                         <div class="form-line">
                                             <select class="form-control show-tick ms select2" name="brand" data-placeholder="انتخاب برند">
-                                                <option></option>
+                                                <option value="{{$product->brandsid}}">{{$product->pro_brands_name}}</option>
                                                 @foreach($brands as $brand)
                                                     <option value="{{$brand->id}}">{{$brand->pro_brands_name}}</option>
                                                 @endforeach
@@ -130,30 +130,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="image1" data-max-file-size="1000K">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="image2" data-max-file-size="1000K">
-                                </div>
-                            </div> 
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="image3" data-max-file-size="1000K">
-                                </div>
-                            </div> 
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="image4" data-max-file-size="1000K">
-                                </div>
-                            </div> 
                             <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">ثبت</button>
                         </form>
                     </div>

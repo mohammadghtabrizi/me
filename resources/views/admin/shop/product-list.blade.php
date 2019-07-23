@@ -84,17 +84,16 @@
                                                 <td>{{$product->pro_inventory}}</td>
                                                 <td>
                                                     @if($product->pro_status == 0)
-                                                        <a href="{{route('block_product',['id' => $product->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد محصول"><i class="zmdi zmdi-block"></i></a>
-                                                        <a href="{{route('approve_product',['id' => $product->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش محصول"><i class="zmdi zmdi-eye"></i></a>
+                                                        <a href="{{route('approve_product',['id' => $product->productid])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش محصول"><i class="zmdi zmdi-eye"></i></a>
                                                     @endif
                                                     @if($product->pro_status == 1)
-                                                        <a href="{{route('block_product',['id' => $product->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد محصول"><i class="zmdi zmdi-block"></i></a>
+                                                        <a href="{{route('block_product',['id' => $product->productid])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد محصول"><i class="zmdi zmdi-block"></i></a>
                                                     @endif
                                                     @if($product->pro_status == 2)
-                                                        <a href="{{route('approve_product',['id' => $product->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش پست"><i class="zmdi zmdi-eye"></i></a>
+                                                        <a href="{{route('approve_product',['id' => $product->productid])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش پست"><i class="zmdi zmdi-eye"></i></a>
                                                     @endif
-                                                        <a href="{{route('delete_product',['id' => $product->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
-                                                        <a href="{{route('edit_product',['id' => $product->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-green" title="ویرارش"><i class="zmdi zmdi-edit"></i></a>
+                                                        <a href="{{route('delete_product',['id' => $product->productid])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
+                                                        <a href="{{route('edit_product',['id' => $product->productid])}}" class="btn btn-default waves-effect waves-float btn-sm waves-green" title="ویرارش"><i class="zmdi zmdi-edit"></i></a>
                                                 </td>
                                             </tr>
                                         @endif

@@ -30,6 +30,7 @@
             <li class="@if($activemenu == 'shopcategory')active open @endif"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-shopping-cart"></i><span>تجارت الکترونیک</span></a>
                 <ul class="ml-menu">
                     <li class="@if($activesubmenu == 'productlist')active @endif"><a href="{{route('product_list_show')}}">لیست محصول</a></li>
+                    <li class="@if($activesubmenu == 'categorylist')active @endif"><a href="{{route('category_list_show')}}">لیست دسته بندی</a></li>
                 </ul>
             </li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-hc-fw"></i><span>مدیریت کاربران</span></a>

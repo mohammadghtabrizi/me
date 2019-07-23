@@ -105,6 +105,8 @@ Route::group(['prefix' => 'admin'],function(){
 		/*Admin Shop Section*/
 		Route::group(['prefix' => 'shop'],function(){
 
+			/*Product Section*/
+
 			Route::get('/product_list','admin\shop\ShopAdminMainController@productlist')->name('product_list_show');
 
 			Route::get('/block_product/{id}','admin\shop\ShopAdminMainController@blockproduct')->name('block_product');
@@ -113,6 +115,8 @@ Route::group(['prefix' => 'admin'],function(){
 
 			Route::get('/edit_product/{id}','admin\shop\ShopAdminMainController@editproduct')->name('edit_product');
 
+			Route::post('/edit_product_act/{id}','admin\shop\ShopAdminMainController@editproductact')->name('edit_product_act');
+
 			Route::get('/delete_product/{id}','admin\shop\ShopAdminMainController@deleteproduct')->name('delete_product');
 
 			Route::post('/product_list_search_by_category','admin\shop\ShopAdminMainController@productlistsearchbycategory')->name('product_list_search_by_category');
@@ -120,6 +124,14 @@ Route::group(['prefix' => 'admin'],function(){
 			Route::get('/add_product','admin\shop\ShopAdminMainController@addproduct')->name('add_product');
 
 			Route::post('/add_product_act','admin\shop\ShopAdminMainController@addproductact')->name('add_product_act');
+
+			/*Product Section*/
+
+			/*Categorys Section*/
+
+			Route::get('/category_list','admin\shop\ShopAdminMainController@categorylist')->name('category_list_show');
+
+			/*Categorys Section*/
 
 
 		});

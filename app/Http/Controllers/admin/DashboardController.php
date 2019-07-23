@@ -20,8 +20,18 @@ class DashboardController extends Controller
 {
 
     public function index(){
+
+        $activemenu = 'dashboard';
+
+        $activesubmenu = '';
         
-    	return view('admin/dashboard-admin');
+    	return view('admin/dashboard-admin')->with([
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
+
+        ]);
         
       	
 
