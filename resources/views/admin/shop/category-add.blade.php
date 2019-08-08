@@ -34,7 +34,6 @@
 @include('admin.partials.right-menu-sidebar-dashboard-admin')
 
 <!-- Main Content -->
-<video src="https://www.aparat.com/v/kXa8I"></video>
 <section class="content">
     <div class="body_scroll">
         <div class="block-header">
@@ -58,7 +57,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>اضافه کردن</strong>محصول</h2>
+                        <h2><strong>اضافه کردن</strong>دسته بندی</h2>
                         <ul class="header-dropdown">
                             <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
@@ -73,43 +72,34 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <form enctype="multipart/form-data" method="POST" action="{{route('add_product_act')}}">
+                        <form enctype="multipart/form-data" method="POST" action="{{route('add_category_product_act')}}">
                         	@csrf
-                            <div class="form-group">                                
-                                <input type="text" class="form-control" name="productname" placeholder="نام محصول">
-                            </div>
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <textarea rows="4" class="form-control no-resize" name="productdetail" placeholder="لطفا آنچه را که میخواهید تایپ کنید..."></textarea>
-                                </div>
-                            </div>
-                            <label for="post_category">نقد و بررسی</label>
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <textarea class="summernote" name="productreview"></textarea>
-                                </div>
-                            </div>
                             <div class="row clearfix">
-                                <div class="col-sm-3">
-                                    <div class="form-group">                                
-                                        <input type="text"  class="form-control" name="productprice" placeholder="قیمت محصول">
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-group">                                
-                                        <input type="text" class="form-control" name="productinventory" placeholder="موجودی انبار">
-                                    </div>
-                                </div>
+                            	@if(!is_null($cats0))
                                 <div class="col-sm-3">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <select class="form-control show-tick ms select2" name="productcategory" data-placeholder="انتخاب دسته بندی">
+                                            <select class="form-control show-tick ms select2" name="categoryselected1" data-placeholder="انتخاب دسته بندی">
                                                 <option></option>
-                                                @foreach($categorys1 as $category1)
-                                                    <optgroup label="{{$category1->pro_cat_name}}">
-                                                    @foreach($categorys2 as $category2)
-                                                        @if($category2->pro_topcat2_id == $category1->id)
-                                                            <option value="{{$category2->id}}">{{$category2->pro_cat_name}}</option>
+                                                @foreach($cats0 as $cat0)
+                                                    <option value="{{$cat0->id}}">{{$cat0->pro_cat_name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if(!is_null($cats1))
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <select class="form-control show-tick ms select2" name="categoryselected2" data-placeholder="انتخاب دسته بندی">
+                                                <option></option>
+                                                @foreach($cats0 as $cat0)
+                                                    <optgroup label="{{$cat0->pro_cat_name}}">
+                                                    @foreach($cats1 as $cat1)
+                                                        @if($cat1->pro_topcat1_id == $cat0->id)
+                                                            <option value="{{$cat1->id}}">{{$cat1->pro_cat_name}}</option>
                                                         @endif
                                                     @endforeach
                                                     </optgroup>
@@ -118,43 +108,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                                 <div class="col-sm-3">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <select class="form-control show-tick ms select2" name="brand" data-placeholder="انتخاب برند">
-                                                <option></option>
-                                                @foreach($brands as $brand)
-                                                    <option value="{{$brand->id}}">{{$brand->pro_brands_name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                    <div class="form-group">                                
+                                        <input type="text" class="form-control" name="categoryselected0" placeholder="نام دسته بندی">
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="image1" data-max-file-size="1000K">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="image2" data-max-file-size="1000K">
-                                </div>
-                            </div> 
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="image3" data-max-file-size="1000K">
-                                </div>
-                            </div> 
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <p>سعی کنید فایل بزرگتر از 100 کیلوبایت آپلود کنید</p>
-                                    <input type="file" class="dropify" name="image4" data-max-file-size="1000K">
-                                </div>
-                            </div> 
                             <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">ثبت</button>
                         </form>
                     </div>

@@ -207,7 +207,18 @@ class AdminBlogMainController extends Controller
 
     public function addcategory(){
 
-        return view('admin/blog/category-add');
+        $activemenu = 'blogcategory';
+
+        $activesubmenu = 'blogpost';
+
+
+        return view('admin/blog/category-add')->with([
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
+
+        ]);
     }
 
     public function addcategoryact(Request $request){

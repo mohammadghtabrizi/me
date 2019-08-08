@@ -131,9 +131,38 @@ Route::group(['prefix' => 'admin'],function(){
 
 			Route::get('/category_list','admin\shop\ShopAdminMainController@categorylist')->name('category_list_show');
 
+			Route::get('/add_category_product/{id}','admin\shop\ShopAdminMainController@addcategoryproduct')->name('add_category_product');
+
+			Route::post('/add_category_product_act','admin\shop\ShopAdminMainController@addcategoryproductact')->name('add_category_product_act');
+			
+			Route::get('/block_product_category/{id}','admin\shop\ShopAdminMainController@blockproductcategory')->name('block_product_category');
+
+			Route::get('/approve_product_category/{id}','admin\shop\ShopAdminMainController@approveproductcategory')->name('approve_product_category');
+
+			Route::get('/edit_product_category/{id}','admin\shop\ShopAdminMainController@editproduct')->name('edit_product_category');
+
+			Route::post('/edit_product_category_act/{id}','admin\shop\ShopAdminMainController@editproductact')->name('edit_product_category_act');
+
+			Route::get('/delete_product_category/{id}','admin\shop\ShopAdminMainController@deleteproductcategory')->name('delete_product_category');
+
 			/*Categorys Section*/
 
+			/*Brand Section*/
 
+			Route::get('/brand_list_show','admin\shop\ShopAdminMainController@brandslist')->name('brand_list_show');
+
+			Route::get('/add_brand','admin\shop\ShopAdminMainController@addbrand')->name('add_brand');
+
+			Route::post('/add_brand_act','admin\shop\ShopAdminMainController@addbrandact')->name('add_brand_act');
+
+			/*Brand Section*/
+
+
+			/*Property Section*/
+
+			Route::get('/property_list_show','admin\shop\ShopAdminMainController@propertylist')->name('property_list_show');
+
+			/*Property Section*/
 		});
 
 		/*Admin Shop Section*/

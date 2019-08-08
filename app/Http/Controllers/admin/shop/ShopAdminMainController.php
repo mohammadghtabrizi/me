@@ -10,6 +10,8 @@ use App\ProductImages;
 use App\ProductCategory;
 use App\ProductBrands;
 
+use Validator;
+
 class ShopAdminMainController extends Controller
 {
     protected $statuses = [
@@ -339,19 +341,19 @@ class ShopAdminMainController extends Controller
         $activesubmenu = 'categorylist';
 
         $categorys0 = ProductCategory::select('product_category.*')
-            ->where('product_category.pro_cat_status','=',1)
+            ->where('product_category.pro_cat_status','<=',2)
             ->where('product_category.pro_topcat1_id','=',NULL)
             ->where('product_category.pro_topcat2_id','=',NULL)
             ->get();
 
         $categorys1 = ProductCategory::select('product_category.*')
-            ->where('product_category.pro_cat_status','=',1)
+            ->where('product_category.pro_cat_status','<=',2)
             ->where('product_category.pro_topcat1_id','<>',NULL)
             ->where('product_category.pro_topcat2_id','=',NULL)
             ->get();
 
         $categorys2 = ProductCategory::select('product_category.*')
-            ->where('product_category.pro_cat_status','=',1)
+            ->where('product_category.pro_cat_status','<=',2)
             ->where('product_category.pro_topcat1_id','<>',NULL)
             ->where('product_category.pro_topcat2_id','<>',NULL)
             ->get();
@@ -377,5 +379,245 @@ class ShopAdminMainController extends Controller
         ]);
     }
 
-    
+    public function addcategoryproduct($id){
+
+        $activemenu = 'shopcategory';
+
+        $activesubmenu = 'categorylist';
+
+        $cats0 = NULL;
+        $cats1 = NULL;
+
+        if($id == 2){
+
+            $cats0 = ProductCategory::select('product_category.*')
+            ->where('product_category.pro_cat_status','=',1)
+            ->where('product_category.pro_topcat1_id','=',NULL)
+            ->where('product_category.pro_topcat2_id','=',NULL)
+            ->get();
+
+            $cats1 = NULL;
+
+        }
+        elseif ($id == 3) {
+
+            $cats0 = ProductCategory::select('product_category.*')
+            ->where('product_category.pro_cat_status','=',1)
+            ->where('product_category.pro_topcat1_id','=',NULL)
+            ->where('product_category.pro_topcat2_id','=',NULL)
+            ->get();
+            
+            $cats1 = ProductCategory::select('product_category.*')
+            ->where('product_category.pro_cat_status','=',1)
+            ->where('product_category.pro_topcat1_id','<>',NULL)
+            ->where('product_category.pro_topcat2_id','=',NULL)
+            ->get();
+
+        }
+
+        return view('admin\shop\category-add')->with([
+
+            'cats0' => $cats0,
+
+            'cats1' => $cats1,
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu,
+
+
+        ]);
+
+    }
+
+    public function addcategoryproductact(Request $request){
+
+        $cat0 = $request->get('categoryselected0');
+        $cat1 = $request->get('categoryselected1');
+        $cat2 = $request->get('categoryselected2');
+
+        $category = new ProductCategory();
+
+        if(is_null($cat1) && is_null($cat2)){
+
+            if(!is_null($cat0)){
+
+                $category->pro_cat_name = $cat0;
+                $category->save();
+
+                return redirect()->route('category_list_show');
+            }
+            
+        }
+
+        elseif (!is_null($cat0) && !is_null($cat1) && is_null($cat2)) {
+
+            $category->pro_topcat1_id = $cat1;
+            $category->pro_cat_name = $cat0;
+            $category->save();
+
+            return redirect()->route('category_list_show');
+        }
+
+        elseif (!is_null($cat0) && !is_null($cat1) && !is_null($cat2)) {
+
+            $category->pro_topcat1_id = $cat1;
+            $category->pro_topcat2_id = $cat2;
+            $category->pro_cat_name = $cat0;
+            $category->save();
+
+            return redirect()->route('category_list_show');
+        }
+
+        return redirect()->back();
+    }
+
+    public function blockproductcategory($id){
+
+        $productcategory = ProductCategory::find($id);
+
+        $productcategory->pro_cat_status = 2;
+
+        $productcategory->save();
+
+        return redirect()->back();
+    }
+
+    public function approveproductcategory($id){
+
+        $productcategory = ProductCategory::find($id);
+
+        $productcategory->pro_cat_status = 1;
+
+        $productcategory->save();
+
+        return redirect()->back();
+    }
+
+    public function deleteproductcategory($id){
+
+        $productcategory = ProductCategory::find($id);
+
+        $productcategory->pro_cat_status = 3;
+
+        $productcategory->save();
+
+        return redirect()->back();
+    }
+
+    public function brandslist(){
+
+
+        $activemenu = 'shopcategory';
+
+        $activesubmenu = 'brandslist';
+
+        $brands = ProductBrands::select('product_brands.*')
+            ->get();
+
+        return view('admin\shop\brands-list')->with([
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu,
+
+            'brands' => $brands
+
+        ]);
+
+    }
+
+    public function addbrand(){
+
+
+        $activemenu = 'shopcategory';
+
+        $activesubmenu = 'brandslist';
+
+
+        return view('admin\shop\brand-add')->with([
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
+
+        ]);
+
+    }
+
+    public function addbrandact(Request $request){
+
+        $rules = [
+
+            'brandimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ];
+
+        $attributes = [
+
+            'brandimage' => 'تصویر'
+
+        ];
+
+        $validator = Validator::make($request->all(),$rules,[],$attributes);
+
+        if($validator->fails()){
+            
+            return redirect()->back()->withErrors($validator);
+
+        }
+
+        $brandname = $request->get('brandname');
+
+        if ($request->hasFile('brandimage')) {
+            $brandimage = $request->file('brandimage');
+            $name = time().'.'.$brandimage->getClientOriginalExtension();
+            $destinationPath = public_path('/images/shop/brands/');
+            $brandimage->move($destinationPath, $name); 
+
+            $savebrand = new ProductBrands();
+
+            $savebrand->pro_brands_name = $brandname;
+            $savebrand->pro_brands_images_source = $name;
+
+            $savebrand->save();
+
+            return redirect()->route('brand_list_show'); 
+        }
+
+        return redirect()->back();
+        
+    }
+
+    public function propertylist(){
+
+        $activemenu = 'shopcategory';
+
+        $activesubmenu = 'propertylist';
+
+        $categorys1 = ProductCategory::select('product_category.*')
+            ->where('product_category.pro_cat_status','=',1)
+            ->where('product_category.pro_topcat1_id','<>',NULL)
+            ->where('product_category.pro_topcat2_id','=',NULL)
+            ->get();
+
+        $categorys2 = ProductCategory::select('product_category.*')
+            ->where('product_category.pro_cat_status','=',1)
+            ->where('product_category.pro_topcat1_id','<>',NULL)
+            ->where('product_category.pro_topcat2_id','<>',NULL)
+            ->get();
+
+
+        return view('admin\shop\property-list')->with([
+
+            'categorys1' => $categorys1,
+
+            'categorys2' => $categorys2,
+
+            'activemenu' => $activemenu,
+
+            'activesubmenu' => $activesubmenu
+        ]);
+
+    }
 }

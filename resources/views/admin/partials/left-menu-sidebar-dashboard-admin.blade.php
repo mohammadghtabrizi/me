@@ -31,14 +31,8 @@
                 <ul class="ml-menu">
                     <li class="@if($activesubmenu == 'productlist')active @endif"><a href="{{route('product_list_show')}}">لیست محصول</a></li>
                     <li class="@if($activesubmenu == 'categorylist')active @endif"><a href="{{route('category_list_show')}}">لیست دسته بندی</a></li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-hc-fw"></i><span>مدیریت کاربران</span></a>
-                <ul class="ml-menu">
-                    <li><a href="ec-dashboard.html">داشبورد</a></li>
-                    <li><a href="ec-product.html">محصول</a></li>
-                    <li><a href="ec-product-List.html">لیست محصول</a></li>
-                    <li><a href="ec-product-detail.html">جزئیات محصول</a></li>
+                    <li class="@if($activesubmenu == 'brandslist')active @endif"><a href="{{route('brand_list_show')}}">لیست برند ها</a></li>
+                    <li class="@if($activesubmenu == 'propertylist')active @endif"><a href="{{route('property_list_show')}}">ویژگی ها</a></li>
                 </ul>
             </li>
         </ul>

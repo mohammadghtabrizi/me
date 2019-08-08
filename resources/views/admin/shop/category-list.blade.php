@@ -21,7 +21,7 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>لیست دسته بندنی محصولات</h2>
+                    <h2>لیست دسته بندی محصولات</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('admin_dashboard')}}"><i class="zmdi zmdi-home"></i> امداد آی تی</a></li>
                         <li class="breadcrumb-item">فروشگاه</li>
@@ -31,7 +31,9 @@
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">                
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
-                    <a href="{{route('add_category_post')}}" class="btn btn-success btn-icon float-right"><i class="zmdi zmdi-plus"></i></a>
+                    <a href="{{route('add_category_product',[1])}}" class="btn btn-success btn-icon float-right" title="دسته بندی 1"><i class="zmdi zmdi-plus"></i></a>
+                    <a href="{{route('add_category_product',[2])}}" class="btn btn-success btn-icon float-right" title="دسته بندی 2"><i class="zmdi zmdi-plus"></i></a>
+                    <a href="{{route('add_category_product',[3])}}" class="btn btn-success btn-icon float-right" title="دسته بندی 3"><i class="zmdi zmdi-plus"></i></a>
                 </div>
             </div>
         </div>
@@ -61,16 +63,16 @@
                                             </td>
                                             <td>
                                                 @if($category0->pro_cat_status == 0)
-                                                    <a href="{{route('approve_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش"><i class="zmdi zmdi-eye"></i></a>
+                                                    <a href="{{route('approve_product_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش"><i class="zmdi zmdi-eye"></i></a>
                                                 @endif
                                                 @if($category0->pro_cat_status == 1)
-                                                    <a href="{{route('block_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد"><i class="zmdi zmdi-block"></i></a>
+                                                    <a href="{{route('block_product_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انسداد"><i class="zmdi zmdi-block"></i></a>
                                                 @endif
                                                 @if($category0->pro_cat_status == 2)
-                                                    <a href="{{route('approve_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش"><i class="zmdi zmdi-eye"></i></a>
+                                                    <a href="{{route('approve_product_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="نمایش"><i class="zmdi zmdi-eye"></i></a>
                                                 @endif
-                                                   <a href="{{route('approve_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-green" title="ویرارش"><i class="zmdi zmdi-edit"></i></a>
-                                                   <a href="{{route('delete_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
+                                                   <a href="{{route('edit_product_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-green" title="ویرارش"><i class="zmdi zmdi-edit"></i></a>
+                                                   <a href="{{route('delete_product_category',['id' => $category0->id])}}" class="btn btn-default waves-effect waves-float btn-sm waves-red" title="انتقال به زباله دان"><i class="zmdi zmdi-delete"></i></a>
                                             </td>
                                         </tr>
                                         @foreach($categorys1 as $category1)

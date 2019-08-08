@@ -33,47 +33,51 @@
 
         <!-- Main Content -->
         <div class="container-fluid">
-            <div class="row clearfix">
-                <div class="col-md-12">
-                    <div class="card mcard_3">
-                        <div class="body">
-                            <a href="{{route('admin_dashboard')}}"><img src="{{asset('assetsadmin/assets/images/profile/defadminmenpicture.png')}}" class="rounded-circle shadow " alt="profile-image"></a>
-                            <h4 class="m-t-10">{{Auth::guard('admin')->user()->name}} {{Auth::guard('admin')->user()->lastname}}</h4>                            
-                            <div class="row">
-                                <div class="col-12">
-                                    <ul class="social-links list-unstyled">
-                                        <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                        <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                        <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
-                                    </ul>
-                                    <p class="text-muted">مدیر</p>
+            <div class="body_scroll">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="card mcard_3">
+                                <div class="body">
+                                    <a href="{{route('admin_dashboard')}}"><img src="{{asset('assetsadmin/assets/images/profile/defadminmenpicture.png')}}" class="rounded-circle shadow " alt="profile-image"></a>
+                                    <h4 class="m-t-10">{{Auth::guard('admin')->user()->name}} {{Auth::guard('admin')->user()->lastname}}</h4>                    
+                                    <div class="row" style="background-color: #e47297;">
+                                        <div class="col-12">
+                                            <ul class="social-links list-unstyled">
+                                                <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
+                                                <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                                                <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            </ul>
+                                            <p class="text-muted">مدیر</p>
+                                        </div>
+                                        <div class="col-4">                                    
+                                            <small>دنبال کردن</small>
+                                            <h5>852</h5>
+                                        </div>
+                                        <div class="col-4">                                    
+                                            <small>دنبال کننده</small>
+                                            <h5>13k</h5>
+                                        </div>
+                                        <div class="col-4">                                    
+                                            <small>پست</small>
+                                            <h5>234</h5>
+                                        </div>                          
+                                    </div>
                                 </div>
-                                <div class="col-4">                                    
-                                    <small>دنبال کردن</small>
-                                    <h5>852</h5>
+                                <div class="body">
+                                    <small class="text-muted">آدرس ایمیل: </small>
+                                    <p>{{Auth::guard('admin')->user()->email}}</p>
+                                    <hr>
+                                    <small class="text-muted">تلفن: </small>
+                                    <p>{{Auth::guard('admin')->user()->mobile}}</p>
+                                    <hr>
+                                    <small class="text-muted">آدرس</small>
+                                    <p>{{Auth::guard('admin')->user()->address}}</p>
+                                    <hr>
                                 </div>
-                                <div class="col-4">                                    
-                                    <small>دنبال کننده</small>
-                                    <h5>13k</h5>
-                                </div>
-                                <div class="col-4">                                    
-                                    <small>پست</small>
-                                    <h5>234</h5>
-                                </div>                          
-                            </div>
+                            </div>                    
                         </div>
-                        <div class="body" style="text-align: right;">
-                            <small class="text-muted">آدرس ایمیل: </small>
-                            <p>{{Auth::guard('admin')->user()->email}}</p>
-                            <hr>
-                            <small class="text-muted">تلفن: </small>
-                            <p>{{Auth::guard('admin')->user()->mobile}}</p>
-                            <hr>
-                            <small class="text-muted">آدرس</small>
-                            <p>{{Auth::guard('admin')->user()->address}}</p>
-                            <hr>
-                        </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
